@@ -1,0 +1,31 @@
+@mixin hoverLink {
+  transition: color .3s ease-in-out;
+  &:hover {
+    color: var(--green)
+  }
+}
+
+@mixin hoverSocial($borderColor, $borderColorHover) {
+  border: 1px solid $borderColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+
+  svg path {
+    transition: fill .3s ease-in-out;
+  }
+
+  &:hover {
+    background-color: var(--green);
+    border-color: $borderColorHover;
+  }
+
+  &:hover svg path {
+    fill: var(--white);
+  }
+}
+
+

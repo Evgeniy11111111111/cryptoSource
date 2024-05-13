@@ -1,0 +1,55 @@
+.history {
+  &__top {
+    margin-bottom: var(--gap-20);
+    gap: var(--gap-20);
+  }
+
+  &__btns {
+    gap: var(--gap-20);
+  }
+
+  &__block {
+    position: relative;
+  }
+
+  &__year {
+    color: var(--green);
+    margin-bottom: var(--gap-12);
+  }
+
+  &__swiper {
+    &-btn {
+      @include switching;
+    }
+
+    &-prev {
+      left: calc(0% - 67px)
+    }
+    &-next {
+      right: calc(0% - 67px)
+    }
+  }
+
+  &__pagination {
+    @include pagination;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .history {
+    &__title {
+      margin-bottom: var(--gap-16);
+    }
+
+    &__swiper {
+      &-btn {
+        display: none;
+      }
+    }
+
+    &__pagination {
+      display: flex;
+    }
+  }
+}

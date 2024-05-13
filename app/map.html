@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Криптософт</title>
+
+  <link rel="preload" href="./fonts/neosanscyr-regular.woff2" as="font">
+  <link rel="preload" href="./fonts/dincondensed.woff2" as="font">
+  <link rel="preload" href="./fonts/neosanscyr_medium.woff2" as="font">
+  <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="./swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./accordion/accordion.min.css">
+  <link rel="stylesheet" href="./choices/choices.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+
+  <script defer src="https://api-maps.yandex.ru/2.1/?apikey=a5649ea3-c317-4346-92f1-03f2b10922bf&lang=ru_RU" type="text/javascript"></script>
+  <script defer src="./bootstrap/bootstrap.bundle.min.js"></script>
+  <script defer src="./swiper/swiper-bundle.min.js"></script>
+  <script defer src="./lazyload/lazyload.min.js"></script>
+  <script defer src="./accordion/accordion.min.js"></script>
+  <script defer src="./choices/choices.min.js"></script>
+  <script defer src="./js/main.js"></script>
+</head>
+
+
+<body id="map">
+<div class="site-container">
+  <header class="header header__absolut">
+    <div class="custom-container container-fluid">
+    <div class="header__content d-flex align-items-center justify-content-between">
+        <a href="/" class="header__logo">
+            <svg width="147" height="55" viewBox="0 0 147 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="55" y="15" width="9" height="17">
+                    <path d="M63.4695 17.3192C63.2617 17.3192 63.0909 17.3454 62.9572 17.3978C62.8236 17.4503 62.6973 17.5438 62.5786 17.6786C62.4597 17.8133 62.3781 17.978 62.3335 18.1727C62.289 18.3673 62.2519 18.5844 62.2221 18.8239L62.0217 20.688C62.0068 20.8826 61.9845 21.0623 61.9549 21.227C61.9251 21.3767 61.8955 21.5301 61.8658 21.6873C61.836 21.8446 61.7915 21.983 61.7321 22.1028C61.643 22.3124 61.5354 22.4958 61.4091 22.653C61.2829 22.8102 61.1604 22.9337 61.0416 23.0236L63.4027 31.1534H61.0861L59.0814 24.0342H57.8117V31.1534H55.5397V15.1633H57.8117V22.013H58.5691C58.8364 22.013 59.0517 21.9755 59.2151 21.9006C59.3784 21.8258 59.5121 21.721 59.616 21.5863C59.7199 21.4515 59.7942 21.298 59.8388 21.1259C59.8833 20.9537 59.9204 20.7628 59.9501 20.5532L60.1729 18.6443C60.1877 18.5844 60.2063 18.4609 60.2286 18.2737C60.2508 18.0866 60.2917 17.8732 60.3511 17.6337C60.4105 17.3941 60.4921 17.1471 60.5961 16.8926C60.7 16.638 60.8337 16.3985 60.9971 16.1739C61.2792 15.8145 61.6245 15.5563 62.0328 15.3991C62.4412 15.2419 62.9201 15.1633 63.4695 15.1633V17.3192Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask0_508_27455)">
+                    <mask id="mask1_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.041H353.632V-241.738H-188.354V141.041Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask1_508_27455)">
+                        <path d="M54.8622 14.4858H64.147V31.8309H54.8622V14.4858Z" fill="#009A6D"/>
+                    </g>
+                </g>
+                <mask id="mask2_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="64" y="15" width="9" height="17">
+                    <path d="M64.7614 31.1534V15.1633H68.1695C68.7932 15.1633 69.3426 15.2456 69.8178 15.4103C70.293 15.575 70.7236 15.867 71.1097 16.2862C71.4958 16.7054 71.7632 17.1957 71.9117 17.7572C72.0601 18.3187 72.1344 19.0785 72.1344 20.0367C72.1344 20.7553 72.0936 21.3617 72.0119 21.8557C71.9302 22.3498 71.7557 22.814 71.4884 23.2482C71.1766 23.7722 70.7608 24.1802 70.2411 24.4721C69.7213 24.7641 69.0382 24.91 68.1917 24.91H67.0334V31.1534H64.7614ZM67.0334 17.3192V22.7541H68.1249C68.5853 22.7541 68.9416 22.6867 69.1941 22.552C69.4466 22.4172 69.6322 22.23 69.751 21.9905C69.8698 21.766 69.9403 21.4889 69.9626 21.1595C69.9848 20.8302 69.996 20.4634 69.996 20.0591C69.996 19.6848 69.9886 19.3293 69.9737 18.9923C69.9589 18.6555 69.8921 18.3598 69.7733 18.1052C69.6544 17.8507 69.4762 17.6561 69.2387 17.5214C69.0011 17.3866 68.6595 17.3192 68.214 17.3192H67.0334Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask2_508_27455)">
+                    <mask id="mask3_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.041H353.632V-241.738H-188.354V141.041Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask3_508_27455)">
+                        <path d="M64.084 14.4858H72.8118V31.8309H64.084V14.4858Z" fill="#009A6D"/>
+                    </g>
+                </g>
+                <mask id="mask4_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="73" y="15" width="9" height="17">
+                    <path d="M79.1287 31.1534V20.7778H79.0842L76.0994 31.1534H73.8273V15.1633H76.0994V25.5614H76.1439L79.1287 15.1633H81.4008V31.1534H79.1287Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask4_508_27455)">
+                    <mask id="mask5_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.041H353.632V-241.738H-188.354V141.041Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask5_508_27455)">
+                        <path d="M73.1498 14.4858H82.0782V31.8309H73.1498V14.4858Z" fill="#009A6D"/>
+                    </g>
+                </g>
+                <mask id="mask6_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="83" y="15" width="8" height="17">
+                    <path d="M83.539 31.1534V15.1633H90.7784V31.1534H88.5063V17.1845H85.8111V31.1534H83.539Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask6_508_27455)">
+                    <mask id="mask7_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.041H353.632V-241.738H-188.354V141.041Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask7_508_27455)">
+                        <path d="M82.8615 14.4858H91.4558V31.8309H82.8615V14.4858Z" fill="#009A6D"/>
+                    </g>
+                </g>
+                <mask id="mask8_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="91" y="15" width="9" height="17">
+                    <path d="M94.4093 31.1534V17.3192H91.7809V15.1633H99.3097V17.3192H96.6813V31.1534H94.4093Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask8_508_27455)">
+                    <mask id="mask9_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.041H353.633V-241.738H-188.354V141.041Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask9_508_27455)">
+                        <path d="M91.1033 14.4858H99.9872V31.8309H91.1033V14.4858Z" fill="#009A6D"/>
+                    </g>
+                </g>
+                <mask id="mask10_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="99" y="15" width="9" height="17">
+                    <path d="M99.911 18.9362C99.911 18.2924 100.022 17.7234 100.245 17.2294C100.468 16.7353 100.765 16.3236 101.136 15.9942C101.493 15.6797 101.897 15.4402 102.35 15.2755C102.803 15.1108 103.26 15.0285 103.72 15.0285C104.18 15.0285 104.637 15.1108 105.09 15.2755C105.543 15.4402 105.955 15.6797 106.326 15.9942C106.683 16.3236 106.972 16.7353 107.195 17.2294C107.418 17.7234 107.529 18.2924 107.529 18.9362V27.3804C107.529 28.0541 107.418 28.6305 107.195 29.1096C106.972 29.5888 106.683 29.9855 106.326 30.2999C105.955 30.6293 105.543 30.8764 105.09 31.0411C104.637 31.2058 104.18 31.2881 103.72 31.2881C103.26 31.2881 102.803 31.2058 102.35 31.0411C101.897 30.8764 101.493 30.6293 101.136 30.2999C100.765 29.9855 100.468 29.5888 100.245 29.1096C100.022 28.6305 99.911 28.0541 99.911 27.3804V18.9362ZM102.183 27.3804C102.183 27.9343 102.335 28.3423 102.64 28.6044C102.944 28.8664 103.304 28.9974 103.72 28.9974C104.136 28.9974 104.496 28.8664 104.8 28.6044C105.105 28.3423 105.257 27.9343 105.257 27.3804V18.9362C105.257 18.3822 105.105 17.9742 104.8 17.7122C104.496 17.4502 104.136 17.3192 103.72 17.3192C103.304 17.3192 102.944 17.4502 102.64 17.7122C102.335 17.9742 102.183 18.3822 102.183 18.9362V27.3804Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask10_508_27455)">
+                    <mask id="mask11_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.04H353.632V-241.738H-188.354V141.04Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask11_508_27455)">
+                        <path d="M99.2336 14.351H108.206V31.9656H99.2336V14.351Z" fill="#009A6D"/>
+                    </g>
+                </g>
+                <mask id="mask12_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="109" y="15" width="8" height="17">
+                    <path d="M116.751 26.5943V27.5825C116.751 28.0766 116.658 28.5445 116.472 28.9861C116.287 29.4278 116.031 29.8209 115.704 30.1652C115.377 30.5095 114.995 30.7828 114.557 30.9849C114.119 31.187 113.647 31.2881 113.142 31.2881C112.712 31.2881 112.274 31.2282 111.828 31.1084C111.383 30.9886 110.982 30.779 110.625 30.4796C110.269 30.1801 109.976 29.7946 109.745 29.323C109.515 28.8514 109.4 28.2488 109.4 27.5151V18.7116C109.4 18.1876 109.489 17.701 109.668 17.2518C109.846 16.8027 110.098 16.4134 110.425 16.084C110.752 15.7546 111.141 15.4963 111.594 15.3092C112.047 15.122 112.548 15.0285 113.098 15.0285C114.167 15.0285 115.036 15.3803 115.704 16.084C116.031 16.4284 116.287 16.8363 116.472 17.3079C116.658 17.7796 116.751 18.2924 116.751 18.8464V19.7446H114.479V18.9811C114.479 18.532 114.353 18.1427 114.1 17.8133C113.848 17.4839 113.506 17.3192 113.076 17.3192C112.511 17.3192 112.136 17.4951 111.951 17.8469C111.765 18.1988 111.672 18.6442 111.672 19.1832V27.3579C111.672 27.8221 111.772 28.2114 111.973 28.5258C112.173 28.8401 112.534 28.9974 113.053 28.9974C113.202 28.9974 113.361 28.9712 113.532 28.9188C113.703 28.8664 113.863 28.7802 114.011 28.6605C114.145 28.5408 114.256 28.3761 114.345 28.1664C114.434 27.9568 114.479 27.6948 114.479 27.3804V26.5943H116.751Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask12_508_27455)">
+                    <mask id="mask13_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.04H353.633V-241.738H-188.354V141.04Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask13_508_27455)">
+                        <path d="M108.723 14.351H117.428V31.9656H108.723V14.351Z" fill="#009A6D"/>
+                    </g>
+                </g>
+                <mask id="mask14_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="118" y="15" width="9" height="17">
+                    <path d="M118.466 18.9362C118.466 18.2924 118.577 17.7234 118.8 17.2294C119.023 16.7353 119.32 16.3236 119.691 15.9942C120.048 15.6797 120.452 15.4402 120.905 15.2755C121.358 15.1108 121.815 15.0285 122.275 15.0285C122.735 15.0285 123.192 15.1108 123.645 15.2755C124.098 15.4402 124.51 15.6797 124.881 15.9942C125.238 16.3236 125.527 16.7353 125.75 17.2294C125.973 17.7234 126.084 18.2924 126.084 18.9362V27.3804C126.084 28.0541 125.973 28.6305 125.75 29.1096C125.527 29.5888 125.238 29.9855 124.881 30.2999C124.51 30.6293 124.098 30.8764 123.645 31.0411C123.192 31.2058 122.735 31.2881 122.275 31.2881C121.815 31.2881 121.358 31.2058 120.905 31.0411C120.452 30.8764 120.048 30.6293 119.691 30.2999C119.32 29.9855 119.023 29.5888 118.8 29.1096C118.577 28.6305 118.466 28.0541 118.466 27.3804V18.9362ZM120.738 27.3804C120.738 27.9343 120.89 28.3423 121.195 28.6044C121.499 28.8664 121.859 28.9974 122.275 28.9974C122.691 28.9974 123.051 28.8664 123.355 28.6044C123.66 28.3423 123.812 27.9343 123.812 27.3804V18.9362C123.812 18.3822 123.66 17.9742 123.355 17.7122C123.051 17.4502 122.691 17.3192 122.275 17.3192C121.859 17.3192 121.499 17.4502 121.195 17.7122C120.89 17.9742 120.738 18.3822 120.738 18.9362V27.3804Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask14_508_27455)">
+                    <mask id="mask15_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.04H353.633V-241.738H-188.354V141.04Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask15_508_27455)">
+                        <path d="M117.789 14.351H126.762V31.9656H117.789V14.351Z" fill="#009A6D"/>
+                    </g>
+                </g>
+                <mask id="mask16_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="127" y="15" width="13" height="17">
+                    <path d="M132.21 28.9525C131.482 28.9525 130.836 28.8327 130.272 28.5932C129.707 28.3536 129.262 28.0242 128.935 27.605C128.698 27.3055 128.501 26.9612 128.345 26.572C128.189 26.1827 128.066 25.7784 127.977 25.3592C127.888 24.94 127.825 24.5133 127.788 24.0791C127.751 23.6449 127.732 23.2332 127.732 22.8439C127.732 21.8857 127.825 20.9687 128.011 20.0928C128.196 19.2169 128.504 18.5394 128.935 18.0603C129.321 17.6262 129.808 17.3155 130.394 17.1283C130.981 16.9412 131.586 16.8476 132.21 16.8476H132.477V15.1633H134.749V16.8476H135.016C135.64 16.8476 136.245 16.9412 136.832 17.1283C137.418 17.3155 137.904 17.6262 138.291 18.0603C138.721 18.5394 139.029 19.2169 139.215 20.0928C139.401 20.9687 139.493 21.8857 139.493 22.8439C139.493 23.2332 139.475 23.6449 139.438 24.0791C139.401 24.5133 139.337 24.94 139.248 25.3592C139.159 25.7784 139.037 26.1827 138.881 26.572C138.725 26.9612 138.528 27.3055 138.291 27.605C137.964 28.0242 137.518 28.3536 136.954 28.5932C136.39 28.8327 135.744 28.9525 135.016 28.9525H134.749V31.1534H132.477V28.9525H132.21ZM134.704 18.9138V26.9313H135.194C135.566 26.9313 135.877 26.8639 136.13 26.7291C136.382 26.5944 136.59 26.4147 136.754 26.1901C136.858 26.0554 136.947 25.8645 137.021 25.6175C137.095 25.3705 137.158 25.0972 137.21 24.7978C137.262 24.4983 137.299 24.1802 137.322 23.8433C137.344 23.5064 137.355 23.1808 137.355 22.8664C137.355 22.567 137.34 22.245 137.311 21.9006C137.281 21.5564 137.236 21.227 137.177 20.9125C137.117 20.5981 137.043 20.3099 136.954 20.0479C136.865 19.7859 136.761 19.5875 136.642 19.4528C136.434 19.2431 136.208 19.1047 135.963 19.0373C135.718 18.9699 135.439 18.9287 135.127 18.9138H134.704ZM132.098 18.9138C131.786 18.9287 131.508 18.9699 131.263 19.0373C131.018 19.1047 130.791 19.2431 130.583 19.4528C130.465 19.5875 130.361 19.7859 130.272 20.0479C130.183 20.3099 130.108 20.5981 130.049 20.9125C129.989 21.227 129.945 21.5564 129.915 21.9006C129.886 22.245 129.871 22.567 129.871 22.8664C129.871 23.1808 129.882 23.5064 129.904 23.8433C129.926 24.1802 129.964 24.4983 130.015 24.7978C130.067 25.0972 130.131 25.3705 130.205 25.6175C130.279 25.8645 130.368 26.0554 130.472 26.1901C130.635 26.4147 130.843 26.5944 131.096 26.7291C131.348 26.8639 131.66 26.9313 132.031 26.9313H132.521V18.9138H132.098Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask16_508_27455)">
+                    <mask id="mask17_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.041H353.632V-241.738H-188.354V141.041Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask17_508_27455)">
+                        <path d="M127.055 14.4858H140.171V31.8309H127.055V14.4858Z" fill="#009A6D"/>
+                    </g>
+                </g>
+                <mask id="mask18_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="139" y="15" width="8" height="17">
+                    <path d="M142.1 31.1534V17.3192H139.471V15.1633H147V17.3192H144.372V31.1534H142.1Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask18_508_27455)">
+                    <mask id="mask19_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.041H353.633V-241.738H-188.354V141.041Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask19_508_27455)">
+                        <path d="M138.794 14.4858H147.678V31.8309H138.794V14.4858Z" fill="#009A6D"/>
+                    </g>
+                </g>
+                <mask id="mask20_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="22" y="0" width="23" height="27">
+                    <path d="M22.3431 15.04L44.6861 0.801363V12.1311L22.3431 26.2166V15.04Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask20_508_27455)">
+                    <mask id="mask21_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.04H353.633V-241.738H-188.354V141.04Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask21_508_27455)">
+                        <path d="M10.4125 6.90714L39.3484 -9.79899L56.6168 20.1107L27.6809 36.8168L10.4125 6.90714Z" fill="#00B883"/>
+                    </g>
+                </g>
+                <mask id="mask22_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="23" height="27">
+                    <path d="M0 15.04L22.3431 0.801363V12.1311L0 26.2166V15.04Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask22_508_27455)">
+                    <mask id="mask23_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.04H353.633V-241.738H-188.354V141.04Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask23_508_27455)">
+                        <path d="M-11.9306 6.90714L17.0052 -9.79899L34.2736 20.1107L5.33775 36.8168L-11.9306 6.90714Z" fill="#009A6D"/>
+                    </g>
+                </g>
+                <mask id="mask24_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="15" width="23" height="26">
+                    <path d="M22.3431 29.4317L0 15.193V26.5227L22.3431 40.6083V29.4317Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask24_508_27455)">
+                    <mask id="mask25_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.04H353.633V-241.738H-188.354V141.04Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask25_508_27455)">
+                        <path d="M34.2736 21.2988L5.33775 4.59275L-11.9306 34.5024L17.0052 51.2085L34.2736 21.2988Z" fill="#00B883"/>
+                    </g>
+                </g>
+                <mask id="mask26_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="22" y="15" width="23" height="26">
+                    <path d="M44.6861 29.4317L22.3431 15.193V26.5227L44.6861 40.6083V29.4317Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask26_508_27455)">
+                    <mask id="mask27_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.04H353.633V-241.738H-188.354V141.04Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask27_508_27455)">
+                        <path d="M56.6168 21.2988L27.6809 4.59275L10.4125 34.5024L39.3484 51.2085L56.6168 21.2988Z" fill="#009A6D"/>
+                    </g>
+                </g>
+                <mask id="mask28_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="22" y="29" width="23" height="26">
+                    <path d="M22.3431 43.8234L44.6861 29.5848V40.9144L22.3431 55V43.8234Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask28_508_27455)">
+                    <mask id="mask29_508_27455" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="384">
+                        <path d="M-188.354 141.041H353.633V-241.738H-188.354V141.041Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask29_508_27455)">
+                        <path d="M10.4125 35.6906L39.3484 18.9845L56.6168 48.8941L27.6809 65.6003L10.4125 35.6906Z" fill="#00B883"/>
+                    </g>
+                </g>
+            </svg>
+        </a>
+        <div class="header__right d-flex align-items-center">
+            <nav class="header__nav">
+                <ul class="header__nav-list list-reset d-flex align-items-center">
+                    <li class="header__nav-item">
+                        <a href="about.html" class="header__link descr1">
+                            О компании
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="work.html" class="header__link descr1">
+                            Работа в Криптософт
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="news.html" class="header__link descr1">
+                            Новости
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="header__btn burger-btn btn-reset">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    <div class="header__menu">
+        <div class="header__menu-wrap">
+            <div class="header__menu-content">
+                <div class="header__accordion">
+                    <div class="header__accordion-item header__accordion-mobile">
+                        <div class="header__accordion-item-head">
+                            <a href="about.html" class="header__accordion-link">
+                                О компании
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header__accordion-item header__accordion-mobile">
+                        <div class="header__accordion-item-head">
+                            <a href="work.html" class="header__accordion-link">
+                                Работа в Криптософт
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header__accordion-item header__accordion-mobile">
+                        <div class="header__accordion-item-head">
+                            <a href="news.html" class="header__accordion-link">
+                                Новости
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header__accordion-item">
+                        <div class="header__accordion-item-head js-accordion-header">
+                            <div class="header__accordion-link">
+                                QP OS
+                            </div>
+                            <span class="header__accordion-svg">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M22.1547 10.8141C21.7069 10.3834 20.9947 10.3974 20.5641 10.8453L15 16.7519L9.43594 10.8453C9.00529 10.3974 8.29312 10.3834 7.84525 10.8141C7.39738 11.2447 7.38342 11.9569 7.81406 12.4047L14.1891 19.1547C14.4012 19.3753 14.694 19.5 15 19.5C15.306 19.5 15.5988 19.3753 15.8109 19.1547L22.1859 12.4047C22.6166 11.9569 22.6026 11.2447 22.1547 10.8141Z" fill="#009A6D"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="header__accordion-item-body">
+                            <div class="header__accordion-item-body-wrap">
+                                <ul class="header__accordion-item-list list-reset">
+                                    <li class="header__accordion-item-item">
+                                        <a href="qp.html" class="header__accordion-item-link">
+                                            Операционная система QP OS
+                                        </a>
+                                    </li>
+                                    <li class="header__accordion-item-item">
+                                        <a class="header__accordion-item-link">
+                                            СУБД QP DB
+                                        </a>
+                                    </li>
+                                    <li class="header__accordion-item-item">
+                                        <a class="header__accordion-item-link">
+                                            Гипервизор QP VMM
+                                        </a>
+                                    </li>
+                                    <li class="header__accordion-item-item">
+                                        <a class="header__accordion-item-link">
+                                            QP Кластер BM
+                                        </a>
+                                    </li>
+                                    <li class="header__accordion-item-item">
+                                        <a class="header__accordion-item-link">
+                                            Офисный пакет QP Грамота
+                                        </a>
+                                    </li>
+                                    <li class="header__accordion-item-item">
+                                        <a class="header__accordion-item-link">
+                                            Тонкий клиент QP RDP и сервер терминалов
+                                        </a>
+                                    </li>
+                                    <li class="header__accordion-item-item">
+                                        <a class="header__accordion-item-link">
+                                            Сервер электронной почты QP Mail Server
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__accordion-item">
+                        <div class="header__accordion-item-head">
+                            <a class="header__accordion-link">
+                                Инфраструктурные решения QP ОС
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header__accordion-item">
+                        <div class="header__accordion-item-head js-accordion-header">
+                            <div class="header__accordion-link">
+                                Защита информации
+                            </div>
+                            <span class="header__accordion-svg">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M22.1547 10.8141C21.7069 10.3834 20.9947 10.3974 20.5641 10.8453L15 16.7519L9.43594 10.8453C9.00529 10.3974 8.29312 10.3834 7.84525 10.8141C7.39738 11.2447 7.38342 11.9569 7.81406 12.4047L14.1891 19.1547C14.4012 19.3753 14.694 19.5 15 19.5C15.306 19.5 15.5988 19.3753 15.8109 19.1547L22.1859 12.4047C22.6166 11.9569 22.6026 11.2447 22.1547 10.8141Z" fill="#009A6D"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="header__accordion-item-body">
+                            <div class="header__accordion-item-body-wrap">
+                                <ul class="header__accordion-item-list list-reset">
+                                    <li class="header__accordion-item-item">
+                                        <a href="protection.html" class="header__accordion-item-link">
+                                            Операционная система QP OS
+                                        </a>
+                                    </li>
+                                    <li class="header__accordion-item-item">
+                                        <a class="header__accordion-item-link">
+                                            ПСЗИ
+                                        </a>
+                                    </li>
+                                    <li class="header__accordion-item-item">
+                                        <a class="header__accordion-item-link">
+                                            АСЗИ
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__accordion-item">
+                        <div class="header__accordion-item-head js-accordion-header">
+                            <div class="header__accordion-link">
+                                Квантово криптографические системы
+                            </div>
+                            <span class="header__accordion-svg">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M22.1547 10.8141C21.7069 10.3834 20.9947 10.3974 20.5641 10.8453L15 16.7519L9.43594 10.8453C9.00529 10.3974 8.29312 10.3834 7.84525 10.8141C7.39738 11.2447 7.38342 11.9569 7.81406 12.4047L14.1891 19.1547C14.4012 19.3753 14.694 19.5 15 19.5C15.306 19.5 15.5988 19.3753 15.8109 19.1547L22.1859 12.4047C22.6166 11.9569 22.6026 11.2447 22.1547 10.8141Z" fill="#009A6D"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="header__accordion-item-body">
+                            <div class="header__accordion-item-body-wrap">
+                                <ul class="header__accordion-item-list list-reset">
+                                    <li class="header__accordion-item-item">
+                                        <a href="quantum.html" class="header__accordion-item-link">
+                                            Квантовые системы выработки и распределения ключей
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  </header>
+  <main class="main">
+    <section class="map">
+  <div class="container-fluid custom-container">
+    <div class="map__content">
+      <div class="map__top d-flex flex-column">
+        <nav class="breadcrumb-custom map__breadcrumb">
+          <ul class="breadcrumb-custom-list list-reset">
+            <li class="breadcrumb-custom-item">
+              <a href="/" class="breadcrumb-custom-link">Главная</a>
+            </li>
+            <li class="breadcrumb-custom-item">
+              <a href="/" class="breadcrumb-custom-link">Главная</a>
+            </li>
+            <li class="breadcrumb-custom-item">
+              О компании
+            </li>
+          </ul>
+        </nav>
+        <h1 class="text-h2 text-h2-1 map__title text-uppercase">
+          Общая структура сайта
+        </h1>
+      </div>
+      <div class="map__body d-flex">
+        <div class="map__body-left">
+          <h2 class="map__title-second text-h6">
+            Главная
+          </h2>
+          <ul class="list-reset map__list d-flex flex-column">
+            <li class="map__item">
+              <div class="map__item-title descr5 descr5-1">
+                <a>
+                  О компании
+                </a>
+              </div>
+              <ul class="list-reset d-flex flex-column map__item-list">
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    <a>
+                  </a>
+                    Обращение генерального директора
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    Лицензии и документы
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    История компании
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    Мероприятия
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    Контакты
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="map__item">
+              <div class="map__item-title descr5 descr5-1">
+                <a>
+                  Операционная система QP ОС
+                </a>
+              </div>
+            </li>
+            <li class="map__item">
+              <div class="map__item-title descr5 descr5-1">
+                <a>
+                  Инфраструктурные решения QP ОС
+                </a>
+              </div>
+              <ul class="list-reset d-flex flex-column map__item-list">
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    СУБД QP DB
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    Гипервизор QP VMM
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    QP Кластер ВМ
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    Офисный пакет QP Грамота
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    Тонкий клиент QP RDP и сервер терминалов
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    Сервер электронной почты QP Mail
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="map__item">
+              <div class="map__item-title descr5 descr5-1">
+                <a>
+                  Защита информации
+                </a>
+              </div>
+              <ul class="list-reset d-flex flex-column map__item-list">
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    ПСЗИ
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    Прикладное ПО
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    АСЗИ
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="map__item">
+              <div class="map__item-title descr5 descr5-1">
+                <a>
+                  Квантово криптографические системы
+                </a>
+              </div>
+              <ul class="list-reset d-flex flex-column map__item-list">
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    Квантовые системы выработки и распределения ключей
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="map__item">
+              <div class="map__item-title descr5 descr5-1">
+                <a>
+                  Работа в Криптософт
+                </a>
+              </div>
+              <ul class="list-reset d-flex flex-column map__item-list">
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    Вакансии
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    Хочу на стажировку
+                  </a>
+                </li>
+                <li class="map__item-item descr5 descr5-1">
+                  <a>
+                    Жизнь в компании
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="map__item">
+              <div class="map__item-title descr5 descr5-1">
+                <a>
+                  Новости и публикации
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="map__body-right d-none d-lg-flex align-items-center justify-content-end">
+          <div class="map__body-svg">
+            <img src="./img/map.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+  <button class="button-up btn-reset">
+    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 20.0664L12 5.06641M12 5.06641L5.25 11.8164M12 5.06641L18.75 11.8164" stroke="#009A6D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <footer class="footer">
+    <div class="container-fluid custom-container">
+  <div class="footer__content">
+    <div class="footer__top">
+      <a class="footer__logo">
+        <svg width="147" height="55" viewBox="0 0 147 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <mask id="mask0_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="55" y="14" width="9" height="17">
+            <path d="M63.4695 17.0843C63.2617 17.0843 63.0909 17.1105 62.9572 17.1629C62.8236 17.2153 62.6973 17.3089 62.5786 17.4436C62.4597 17.5784 62.3781 17.7431 62.3335 17.9377C62.289 18.1324 62.2519 18.3494 62.2221 18.589L62.0217 20.453C62.0068 20.6477 61.9845 20.8273 61.9549 20.992C61.9251 21.1418 61.8955 21.2952 61.8658 21.4524C61.836 21.6096 61.7915 21.7481 61.7321 21.8679C61.643 22.0775 61.5354 22.2609 61.4091 22.4181C61.2829 22.5753 61.1604 22.6988 61.0416 22.7887L63.4027 30.9185H61.0861L59.0814 23.7993H57.8117V30.9185H55.5397V14.9284H57.8117V21.7781H58.5691C58.8364 21.7781 59.0517 21.7406 59.2151 21.6657C59.3784 21.5909 59.5121 21.4861 59.616 21.3514C59.7199 21.2166 59.7942 21.0631 59.8388 20.891C59.8833 20.7188 59.9204 20.5279 59.9501 20.3183L60.1729 18.4093C60.1877 18.3494 60.2063 18.2259 60.2286 18.0388C60.2508 17.8516 60.2917 17.6383 60.3511 17.3987C60.4105 17.1592 60.4921 16.9122 60.5961 16.6576C60.7 16.4031 60.8337 16.1635 60.9971 15.939C61.2792 15.5796 61.6245 15.3214 62.0328 15.1642C62.4412 15.0069 62.9201 14.9284 63.4695 14.9284V17.0843Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask0_508_30253)">
+            <mask id="mask1_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.632V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask1_508_30253)">
+              <path d="M54.8622 14.2511H64.147V31.5962H54.8622V14.2511Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+          <mask id="mask2_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="64" y="14" width="9" height="17">
+            <path d="M64.7614 30.9185V14.9284H68.1695C68.7932 14.9284 69.3426 15.0107 69.8178 15.1754C70.293 15.3401 70.7236 15.6321 71.1097 16.0513C71.4958 16.4704 71.7632 16.9608 71.9117 17.5222C72.0601 18.0837 72.1344 18.8435 72.1344 19.8018C72.1344 20.5204 72.0936 21.1268 72.0119 21.6208C71.9302 22.1149 71.7557 22.579 71.4884 23.0132C71.1766 23.5373 70.7608 23.9452 70.2411 24.2372C69.7213 24.5292 69.0382 24.6751 68.1917 24.6751H67.0334V30.9185H64.7614ZM67.0334 17.0843V22.5192H68.1249C68.5853 22.5192 68.9416 22.4518 69.1941 22.3171C69.4466 22.1823 69.6322 21.9951 69.751 21.7556C69.8698 21.531 69.9403 21.254 69.9626 20.9246C69.9848 20.5952 69.996 20.2284 69.996 19.8242C69.996 19.4499 69.9886 19.0943 69.9737 18.7574C69.9589 18.4206 69.8921 18.1249 69.7733 17.8703C69.6544 17.6158 69.4762 17.4212 69.2387 17.2865C69.0011 17.1517 68.6595 17.0843 68.214 17.0843H67.0334Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask2_508_30253)">
+            <mask id="mask3_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.632V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask3_508_30253)">
+              <path d="M64.084 14.2511H72.8118V31.5962H64.084V14.2511Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+          <mask id="mask4_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="73" y="14" width="9" height="17">
+            <path d="M79.1287 30.9185V20.5429H79.0842L76.0994 30.9185H73.8273V14.9284H76.0994V25.3264H76.1439L79.1287 14.9284H81.4008V30.9185H79.1287Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask4_508_30253)">
+            <mask id="mask5_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.632V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask5_508_30253)">
+              <path d="M73.1498 14.2511H82.0782V31.5962H73.1498V14.2511Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+          <mask id="mask6_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="83" y="14" width="8" height="17">
+            <path d="M83.539 30.9185V14.9284H90.7784V30.9185H88.5063V16.9496H85.8111V30.9185H83.539Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask6_508_30253)">
+            <mask id="mask7_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.632V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask7_508_30253)">
+              <path d="M82.8615 14.2511H91.4558V31.5962H82.8615V14.2511Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+          <mask id="mask8_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="91" y="14" width="9" height="17">
+            <path d="M94.4093 30.9185V17.0843H91.7809V14.9284H99.3097V17.0843H96.6813V30.9185H94.4093Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask8_508_30253)">
+            <mask id="mask9_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.633V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask9_508_30253)">
+              <path d="M91.1033 14.2511H99.9872V31.5962H91.1033V14.2511Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+          <mask id="mask10_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="99" y="14" width="9" height="18">
+            <path d="M99.911 18.7013C99.911 18.0575 100.022 17.4886 100.245 16.9945C100.468 16.5004 100.765 16.0887 101.136 15.7593C101.493 15.4449 101.897 15.2053 102.35 15.0406C102.803 14.8759 103.26 14.7936 103.72 14.7936C104.18 14.7936 104.637 14.8759 105.09 15.0406C105.543 15.2053 105.955 15.4449 106.326 15.7593C106.683 16.0887 106.972 16.5004 107.195 16.9945C107.418 17.4886 107.529 18.0575 107.529 18.7013V27.1455C107.529 27.8193 107.418 28.3957 107.195 28.8748C106.972 29.3539 106.683 29.7506 106.326 30.065C105.955 30.3944 105.543 30.6415 105.09 30.8062C104.637 30.9709 104.18 31.0532 103.72 31.0532C103.26 31.0532 102.803 30.9709 102.35 30.8062C101.897 30.6415 101.493 30.3944 101.136 30.065C100.765 29.7506 100.468 29.3539 100.245 28.8748C100.022 28.3957 99.911 27.8193 99.911 27.1455V18.7013ZM102.183 27.1455C102.183 27.6995 102.335 28.1075 102.64 28.3695C102.944 28.6315 103.304 28.7625 103.72 28.7625C104.136 28.7625 104.496 28.6315 104.8 28.3695C105.105 28.1075 105.257 27.6995 105.257 27.1455V18.7013C105.257 18.1474 105.105 17.7394 104.8 17.4773C104.496 17.2154 104.136 17.0843 103.72 17.0843C103.304 17.0843 102.944 17.2154 102.64 17.4773C102.335 17.7394 102.183 18.1474 102.183 18.7013V27.1455Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask10_508_30253)">
+            <mask id="mask11_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.632V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask11_508_30253)">
+              <path d="M99.2336 14.1164H108.206V31.731H99.2336V14.1164Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+          <mask id="mask12_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="109" y="14" width="8" height="18">
+            <path d="M116.751 26.3595V27.3477C116.751 27.8417 116.658 28.3096 116.472 28.7513C116.287 29.1929 116.031 29.586 115.704 29.9303C115.377 30.2747 114.995 30.5479 114.557 30.7501C114.119 30.9521 113.647 31.0532 113.142 31.0532C112.712 31.0532 112.274 30.9933 111.828 30.8736C111.383 30.7538 110.982 30.5442 110.625 30.2447C110.269 29.9453 109.976 29.5598 109.745 29.0881C109.515 28.6165 109.4 28.0139 109.4 27.2802V18.4768C109.4 17.9527 109.489 17.4662 109.668 17.017C109.846 16.5678 110.098 16.1785 110.425 15.8491C110.752 15.5197 111.141 15.2615 111.594 15.0744C112.047 14.8872 112.548 14.7936 113.098 14.7936C114.167 14.7936 115.036 15.1454 115.704 15.8491C116.031 16.1935 116.287 16.6015 116.472 17.0731C116.658 17.5447 116.751 18.0575 116.751 18.6115V19.5098H114.479V18.7463C114.479 18.2971 114.353 17.9078 114.1 17.5784C113.848 17.249 113.506 17.0843 113.076 17.0843C112.511 17.0843 112.136 17.2603 111.951 17.6121C111.765 17.964 111.672 18.4093 111.672 18.9484V27.1231C111.672 27.5872 111.772 27.9765 111.973 28.2909C112.173 28.6053 112.534 28.7625 113.053 28.7625C113.202 28.7625 113.361 28.7363 113.532 28.6839C113.703 28.6315 113.863 28.5454 114.011 28.4256C114.145 28.3059 114.256 28.1412 114.345 27.9316C114.434 27.722 114.479 27.4599 114.479 27.1455V26.3595H116.751Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask12_508_30253)">
+            <mask id="mask13_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.633V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask13_508_30253)">
+              <path d="M108.723 14.1164H117.428V31.731H108.723V14.1164Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+          <mask id="mask14_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="118" y="14" width="9" height="18">
+            <path d="M118.466 18.7013C118.466 18.0575 118.577 17.4886 118.8 16.9945C119.023 16.5004 119.32 16.0887 119.691 15.7593C120.048 15.4449 120.452 15.2053 120.905 15.0406C121.358 14.8759 121.815 14.7936 122.275 14.7936C122.735 14.7936 123.192 14.8759 123.645 15.0406C124.098 15.2053 124.51 15.4449 124.881 15.7593C125.238 16.0887 125.527 16.5004 125.75 16.9945C125.973 17.4886 126.084 18.0575 126.084 18.7013V27.1455C126.084 27.8193 125.973 28.3957 125.75 28.8748C125.527 29.3539 125.238 29.7506 124.881 30.065C124.51 30.3944 124.098 30.6415 123.645 30.8062C123.192 30.9709 122.735 31.0532 122.275 31.0532C121.815 31.0532 121.358 30.9709 120.905 30.8062C120.452 30.6415 120.048 30.3944 119.691 30.065C119.32 29.7506 119.023 29.3539 118.8 28.8748C118.577 28.3957 118.466 27.8193 118.466 27.1455V18.7013ZM120.738 27.1455C120.738 27.6995 120.89 28.1075 121.195 28.3695C121.499 28.6315 121.859 28.7625 122.275 28.7625C122.691 28.7625 123.051 28.6315 123.355 28.3695C123.66 28.1075 123.812 27.6995 123.812 27.1455V18.7013C123.812 18.1474 123.66 17.7394 123.355 17.4773C123.051 17.2154 122.691 17.0843 122.275 17.0843C121.859 17.0843 121.499 17.2154 121.195 17.4773C120.89 17.7394 120.738 18.1474 120.738 18.7013V27.1455Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask14_508_30253)">
+            <mask id="mask15_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.633V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask15_508_30253)">
+              <path d="M117.789 14.1164H126.762V31.731H117.789V14.1164Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+          <mask id="mask16_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="127" y="14" width="13" height="17">
+            <path d="M132.21 28.7176C131.482 28.7176 130.836 28.5978 130.272 28.3582C129.707 28.1187 129.262 27.7893 128.935 27.3701C128.698 27.0706 128.501 26.7263 128.345 26.337C128.189 25.9478 128.066 25.5435 127.977 25.1243C127.888 24.705 127.825 24.2784 127.788 23.8442C127.751 23.41 127.732 22.9983 127.732 22.609C127.732 21.6508 127.825 20.7338 128.011 19.8579C128.196 18.982 128.504 18.3045 128.935 17.8254C129.321 17.3913 129.808 17.0806 130.394 16.8934C130.981 16.7063 131.586 16.6127 132.21 16.6127H132.477V14.9284H134.749V16.6127H135.016C135.64 16.6127 136.245 16.7063 136.832 16.8934C137.418 17.0806 137.904 17.3913 138.291 17.8254C138.721 18.3045 139.029 18.982 139.215 19.8579C139.401 20.7338 139.493 21.6508 139.493 22.609C139.493 22.9983 139.475 23.41 139.438 23.8442C139.401 24.2784 139.337 24.705 139.248 25.1243C139.159 25.5435 139.037 25.9478 138.881 26.337C138.725 26.7263 138.528 27.0706 138.291 27.3701C137.964 27.7893 137.518 28.1187 136.954 28.3582C136.39 28.5978 135.744 28.7176 135.016 28.7176H134.749V30.9185H132.477V28.7176H132.21ZM134.704 18.6788V26.6964H135.194C135.566 26.6964 135.877 26.629 136.13 26.4942C136.382 26.3595 136.59 26.1798 136.754 25.9552C136.858 25.8205 136.947 25.6296 137.021 25.3825C137.095 25.1355 137.158 24.8623 137.21 24.5629C137.262 24.2634 137.299 23.9453 137.322 23.6083C137.344 23.2715 137.355 22.9458 137.355 22.6315C137.355 22.332 137.34 22.0101 137.311 21.6657C137.281 21.3214 137.236 20.992 137.177 20.6776C137.117 20.3632 137.043 20.075 136.954 19.8129C136.865 19.551 136.761 19.3526 136.642 19.2178C136.434 19.0082 136.208 18.8697 135.963 18.8023C135.718 18.735 135.439 18.6938 135.127 18.6788H134.704ZM132.098 18.6788C131.786 18.6938 131.508 18.735 131.263 18.8023C131.018 18.8697 130.791 19.0082 130.583 19.2178C130.465 19.3526 130.361 19.551 130.272 19.8129C130.183 20.075 130.108 20.3632 130.049 20.6776C129.989 20.992 129.945 21.3214 129.915 21.6657C129.886 22.0101 129.871 22.332 129.871 22.6315C129.871 22.9458 129.882 23.2715 129.904 23.6083C129.926 23.9453 129.964 24.2634 130.015 24.5629C130.067 24.8623 130.131 25.1355 130.205 25.3825C130.279 25.6296 130.368 25.8205 130.472 25.9552C130.635 26.1798 130.843 26.3595 131.096 26.4942C131.348 26.629 131.66 26.6964 132.031 26.6964H132.521V18.6788H132.098Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask16_508_30253)">
+            <mask id="mask17_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.632V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask17_508_30253)">
+              <path d="M127.055 14.2511H140.171V31.5962H127.055V14.2511Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+          <mask id="mask18_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="139" y="14" width="8" height="17">
+            <path d="M142.1 30.9185V17.0843H139.471V14.9284H147V17.0843H144.372V30.9185H142.1Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask18_508_30253)">
+            <mask id="mask19_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.633V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask19_508_30253)">
+              <path d="M138.794 14.2511H147.678V31.5962H138.794V14.2511Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+          <mask id="mask20_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="22" y="0" width="23" height="26">
+            <path d="M22.3431 14.8054L44.6861 0.566744V11.8964L22.3431 25.9819V14.8054Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask20_508_30253)">
+            <mask id="mask21_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.633V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask21_508_30253)">
+              <path d="M10.4125 6.67234L39.3484 -10.0338L56.6168 19.8759L27.6809 36.582L10.4125 6.67234Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+          <mask id="mask22_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="23" height="26">
+            <path d="M0 14.8054L22.3431 0.566744V11.8964L0 25.9819V14.8054Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask22_508_30253)">
+            <mask id="mask23_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.633V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask23_508_30253)">
+              <path d="M-11.9306 6.67234L17.0052 -10.0338L34.2736 19.8759L5.33775 36.582L-11.9306 6.67234Z" fill="#747E7C"/>
+            </g>
+          </g>
+          <mask id="mask24_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="14" width="23" height="27">
+            <path d="M22.3431 29.197L0 14.9583V26.288L22.3431 40.3735V29.197Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask24_508_30253)">
+            <mask id="mask25_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.633V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask25_508_30253)">
+              <path d="M34.2736 21.064L5.33775 4.35789L-11.9306 34.2676L17.0052 50.9736L34.2736 21.064Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+          <mask id="mask26_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="22" y="14" width="23" height="27">
+            <path d="M44.6861 29.197L22.3431 14.9583V26.288L44.6861 40.3735V29.197Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask26_508_30253)">
+            <mask id="mask27_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.633V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask27_508_30253)">
+              <path d="M56.6168 21.064L27.6809 4.35789L10.4125 34.2676L39.3484 50.9736L56.6168 21.064Z" fill="#747E7C"/>
+            </g>
+          </g>
+          <mask id="mask28_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="22" y="29" width="23" height="26">
+            <path d="M22.3431 43.5886L44.6861 29.3499V40.6796L22.3431 54.7651V43.5886Z" fill="white"/>
+          </mask>
+          <g mask="url(#mask28_508_30253)">
+            <mask id="mask29_508_30253" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-189" y="-242" width="543" height="383">
+              <path d="M-188.354 140.806H353.633V-241.973H-188.354V140.806Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask29_508_30253)">
+              <path d="M10.4125 35.4556L39.3484 18.7494L56.6168 48.6591L27.6809 65.3652L10.4125 35.4556Z" fill="#BCC7C4"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+    <div class="footer__mid d-flex flex-column-reverse flex-lg-row flex-wrap justify-content-between">
+      <div class="footer__mid-left d-flex flex-wrap">
+        <div class="footer__address">
+          <h2 class="text-h7 footer__address-title">
+            Пенза
+          </h2>
+          <p class="descr1 footer__address-descr">
+            440026 г. Пенза, ул. Лермонтова, д. 3
+            <br/>
+            телефон/факс: <a href="tel:+78412991091">+7 (8412) 99-10-91</a>, <a href="tel:+78412560077">56-00-77</a>
+          </p>
+          <div id="js-map-penza" class="footer__map ">
+
+          </div>
+        </div>
+        <div class="footer__address">
+          <h2 class="text-h7 footer__address-title">
+            Москва
+          </h2>
+          <p class="descr1 footer__address-descr">
+            107113 г. Москва, ул. Шумкина, д. 26А, стр. 2
+            <br/>
+            телефон/факс: <a href="tel:+74995004236">+7 (499) 500-42-36</a>
+          </p>
+          <div id="js-map-moscow" class="footer__map ">
+
+          </div>
+        </div>
+      </div>
+      <div class="footer__mid-right d-flex flex-column justify-content-between">
+        <nav class="footer__nav">
+          <ul class="footer__list d-flex flex-column list-reset">
+            <li class="footer_item">
+              <a href="qp.html" class="footer__link descr1">
+                Операционная система QP ОС
+              </a>
+            </li>
+            <li class="footer_item">
+              <a class="footer__link descr1">
+                Инфраструктурные решения QP ОС
+              </a>
+            </li>
+            <li class="footer_item">
+              <a href="protection.html" class="footer__link descr1">
+                Защита информации
+              </a>
+            </li>
+            <li class="footer_item">
+              <a href="quantum.html" class="footer__link descr1">
+                Квантово криптографические системы
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__social-nav d-none">
+          <ul class="footer__social-list d-flex align-items-center list-reset">
+            <li class="footer__social-item">
+              <a class="footer__social-link">
+                <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M23.5 1.74268L19.8619 20.7359C19.8619 20.7359 19.3528 22.0528 17.9545 21.4212L9.56028 14.7563L9.52135 14.7366C10.6552 13.6823 19.4476 5.49584 19.8319 5.12477C20.4268 4.55006 20.0575 4.20792 19.3668 4.64205L6.37927 13.1831L1.36872 11.4372C1.36872 11.4372 0.580206 11.1468 0.504349 10.5152C0.427494 9.88263 1.39467 9.54049 1.39467 9.54049L21.8212 1.2424C21.8212 1.2424 23.5 0.478534 23.5 1.74268Z" fill="#009A6D"/>
+                </svg>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a class="footer__social-link">
+                <svg width="24" height="15" viewBox="0 0 24 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M23.4352 1.5577C23.6132 0.998508 23.4352 0.591824 22.6473 0.591824H20.0292C19.3684 0.591824 19.0634 0.947674 18.8854 1.32894C18.8854 1.32894 17.5383 4.58242 15.6574 6.6921C15.0474 7.30213 14.7678 7.50547 14.4373 7.50547C14.2594 7.50547 14.0306 7.30213 14.0306 6.74294V1.53228C14.0306 0.871419 13.8273 0.566406 13.2681 0.566406H9.15042C8.74373 0.566406 8.48956 0.871419 8.48956 1.17643C8.48956 1.81188 9.43001 1.96439 9.53168 3.74363V7.60714C9.53168 8.44593 9.37918 8.59844 9.04875 8.59844C8.15912 8.59844 5.99861 5.31954 4.7023 1.58312C4.44812 0.846002 4.19394 0.566406 3.53308 0.566406H0.889624C0.127089 0.566406 0 0.922254 0 1.30352C0 1.9898 0.889624 5.44663 4.14311 10.0218C6.30362 13.1482 9.37918 14.8258 12.1497 14.8258C13.8273 14.8258 14.0306 14.4445 14.0306 13.8091V11.4452C14.0306 10.6827 14.1831 10.5556 14.7169 10.5556C15.0982 10.5556 15.7845 10.759 17.335 12.2586C19.1142 14.0379 19.4192 14.8512 20.4105 14.8512H23.0286C23.7911 14.8512 24.1469 14.47 23.9436 13.7328C23.7148 12.9957 22.8506 11.9282 21.7322 10.6573C21.1222 9.94558 20.2072 9.15763 19.9276 8.77636C19.5463 8.26801 19.648 8.06466 19.9276 7.60714C19.9022 7.60714 23.1048 3.08277 23.4352 1.5577Z" fill="#009A6D"/>
+                </svg>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a class="footer__social-link">
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.4878 4.06641C18.23 1.81641 15.2195 0.566406 12.0418 0.566406C5.43554 0.566406 0.0836224 5.89974 0.0836224 12.4831C0.0836224 14.5664 0.668989 16.6497 1.67247 18.3997L0 24.5664L6.3554 22.8997C8.1115 23.8164 10.0348 24.3164 12.0418 24.3164C18.6481 24.3164 24 18.9831 24 12.3997C23.9164 9.31641 22.7456 6.31641 20.4878 4.06641ZM17.8118 16.7331C17.561 17.3997 16.3902 18.0664 15.8049 18.1497C15.3031 18.2331 14.6341 18.2331 13.9652 18.0664C13.547 17.8997 12.9617 17.7331 12.2927 17.3997C9.28223 16.1497 7.35889 13.1497 7.19164 12.8997C7.02439 12.7331 5.93728 11.3164 5.93728 9.81641C5.93728 8.31641 6.68989 7.64974 6.94077 7.31641C7.19164 6.98307 7.52613 6.98307 7.777 6.98307C7.94425 6.98307 8.19512 6.98307 8.36237 6.98307C8.52961 6.98307 8.78049 6.89974 9.03136 7.48307C9.28223 8.06641 9.86759 9.56641 9.95122 9.64974C10.0348 9.81641 10.0348 9.98307 9.95122 10.1497C9.86759 10.3164 9.78397 10.4831 9.61672 10.6497C9.44947 10.8164 9.28223 11.0664 9.1986 11.1497C9.03135 11.3164 8.86411 11.4831 9.03136 11.7331C9.19861 12.0664 9.78397 12.9831 10.7038 13.8164C11.8746 14.8164 12.7944 15.1497 13.1289 15.3164C13.4634 15.4831 13.6307 15.3997 13.7979 15.2331C13.9652 15.0664 14.5505 14.3997 14.7178 14.0664C14.885 13.7331 15.1359 13.8164 15.3868 13.8997C15.6376 13.9831 17.1429 14.7331 17.3937 14.8997C17.7282 15.0664 17.8955 15.1497 17.9791 15.2331C18.0627 15.4831 18.0627 16.0664 17.8118 16.7331Z" fill="#009A6D"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom d-flex d-flex flex-column flex-md-row justify-content-md-between align-items-md-center">
+      <nav class="footer__bottom-nav d-flex align-items-md-center">
+        <ul class="footer__bottom-list flex-column flex-md-row list-reset d-flex align-items-md-center">
+          <li class="footer__bottom-item">
+            <a class="footer__bottom-link descr1">
+              Политика конфиденциальности
+            </a>
+          </li>
+          <li class="footer__bottom-item">
+            <a href="map.html" class="footer__bottom-link descr1">
+              Карта сайта
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <a href="https://meven.ru" class="footer__meven descr1 d-flex align-items-center">
+        <span>Разработано </span>
+        <svg width="56" height="15" viewBox="0 0 56 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.5 9.375L0 2V12H3L6.5 9.375Z" fill="#DBDBDB"/>
+          <path d="M6.5 9.375L13 2V12H10L6.5 9.375Z" fill="#CA1616"/>
+          <path d="M16.1523 12V3.46875H17.6641L20.1953 9.80273C20.2422 9.91992 20.2871 10.043 20.3301 10.1719C20.377 10.2969 20.418 10.418 20.4531 10.5352H20.5C20.5352 10.418 20.5742 10.2969 20.6172 10.1719C20.6602 10.043 20.7051 9.91992 20.752 9.80273L23.2656 3.46875H24.8008V12H23.6816V5.82422C23.6816 5.70703 23.6836 5.57617 23.6875 5.43164C23.6953 5.2832 23.707 5.15039 23.7227 5.0332H23.6699C23.6387 5.15039 23.5977 5.2832 23.5469 5.43164C23.5 5.57617 23.4531 5.70703 23.4062 5.82422L20.957 12H19.9609L17.4941 5.82422C17.4473 5.70703 17.3984 5.57617 17.3477 5.43164C17.3008 5.2832 17.2676 5.15039 17.248 5.0332H17.1895C17.2051 5.15039 17.2148 5.2832 17.2188 5.43164C17.2266 5.57617 17.2305 5.70703 17.2305 5.82422V12H16.1523ZM26.793 12V3.46875H32.2598V4.41797H27.9414V7.125H31.7148V8.07422H27.9414V11.0508H32.3184V12H26.793ZM32.7227 3.46875H33.9473L36.2324 9.75586C36.2832 9.88867 36.3262 10.0117 36.3613 10.125C36.3965 10.2383 36.4316 10.3574 36.4668 10.4824H36.5195C36.5547 10.3574 36.5898 10.2383 36.625 10.125C36.6641 10.0117 36.709 9.88867 36.7598 9.75586L39.0684 3.46875H40.2344L37.0059 12.0586H35.9512L32.7227 3.46875ZM41.2305 12V3.46875H46.6973V4.41797H42.3789V7.125H46.1523V8.07422H42.3789V11.0508H46.7559V12H41.2305ZM48.1562 12V3.46875H49.3574L53.2891 9.45117C53.3672 9.56836 53.4414 9.69141 53.5117 9.82031C53.5859 9.94531 53.6465 10.0566 53.6934 10.1543H53.7461C53.7383 10.0371 53.7324 9.89648 53.7285 9.73242C53.7246 9.56445 53.7227 9.42188 53.7227 9.30469V3.46875H54.8418V12H53.6406L49.6973 6.00586C49.6191 5.88867 49.5449 5.77148 49.4746 5.6543C49.4082 5.53711 49.3496 5.42969 49.2988 5.33203H49.252C49.2559 5.44922 49.2598 5.58203 49.2637 5.73047C49.2676 5.875 49.2695 6.00586 49.2695 6.12305V12H48.1562Z" fill="white"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+  </footer>
+</div>
+</body>
+<script>
+</script>
+</html>

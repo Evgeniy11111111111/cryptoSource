@@ -1,0 +1,16 @@
+@mixin pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  .swiper-pagination-bullet {
+    border-radius: 0;
+    width: 20px;
+    height: 4px;
+    opacity: 1;
+    background-color: var(--gray-secondary);
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--green);
+  }
+}

@@ -1,0 +1,76 @@
+.after-hero {
+  padding: 30px 0 70px;
+  &__swiper {
+    margin-right: 1px;
+    &-slide {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--gray);
+      padding: 20px;
+      box-sizing: border-box;
+      height: auto !important;
+      transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+      &-wrap {
+        margin-right: 1px;
+      }
+      &:hover {
+        background-color: var(--green);
+        border-color: var(--green);
+        h3 {
+          color: var(--white);
+        }
+        p {
+          color: var(--white);
+        }
+
+        svg {
+          path, rect, circle {
+            stroke: var(--white);
+          }
+        }
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50px;
+    margin-bottom: 28px;
+
+    svg  {
+      path, circle, rect {
+        transition: stroke .3s ease-in-out;
+      }
+    }
+  }
+
+  &__title {
+    transition: color .3s ease-in-out;
+  }
+
+  &__descr {
+    transition: color .3s ease-in-out;
+  }
+
+  &__swiper-pagination {
+    @include pagination;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .after-hero {
+    padding: 20px 0 35px;
+  }
+}

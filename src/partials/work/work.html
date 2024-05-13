@@ -1,0 +1,54 @@
+<section class="work">
+  <div class="custom-container container-fluid">
+    <div class="work__content">
+      <div class="work__top d-flex flex-column">
+        <nav class="breadcrumb-custom work__breadcrumb">
+          <ul class="breadcrumb-custom-list list-reset">
+            <li class="breadcrumb-custom-item">
+              <a href="/" class="breadcrumb-custom-link">Главная</a>
+            </li>
+            <li class="breadcrumb-custom-item">
+              Работа в Криптософт
+            </li>
+          </ul>
+        </nav>
+        <h1 class="text-h2 text-h2-1 work__title text-uppercase">
+          работа в криптософт
+        </h1>
+        <div class="work__tab-head">
+          <ul class="work__tab-head-list">
+            <li class="work__tab-head-item">
+              <button class="work__tab-head-btn">
+                вакансии
+              </button>
+            </li>
+            <li class="work__tab-head-item">
+              <button class="work__tab-head-btn">
+                хочу на стажировку
+              </button>
+
+            </li>
+            <li class="work__tab-head-item">
+              <button class="work__tab-head-btn">
+                жизнь в компании
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="work__bottom">
+        <div class="work__tab-body">
+          <div class="work__tab-item">
+            @include('vacancies.html')
+          </div>
+          <div class="work__tab-item">
+            @include('internship.html')
+          </div>
+          <div class="work__tab-item">
+            @include('live.html')
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

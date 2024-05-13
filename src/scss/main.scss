@@ -1,0 +1,34 @@
+// базовые подключения
+// @import "node_modules/bootstrap/scss/bootstrap";
+@import "./vendor";
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+@import "text";
+@import "btns";
+@import "input";
+
+@import "./components/header";
+@import "./components/footer.scss";
+@import "./components/main/hero";
+@import "./components/main/after-hero";
+@import "./components/main/news";
+@import "./components/main/about";
+@import "./components/main/facts";
+@import "./components/main/customers";
+@import "./components/about/about";
+@import "./components/about/licenses";
+@import "./components/about/history";
+@import "./components/about/events";
+@import "./components/about/contacts";
+@import "./components/work/work";
+@import "./components/work/vacancies";
+@import "./components/work/internship";
+@import "./components/work/live";
+@import "./components/news/news";
+@import "./components/detail-news/detail-news";
+@import "./components/qp/qp";
+@import "./components/protection/protection";
+@import "./components/quantum/quantum";
+@import "./components/map/map";

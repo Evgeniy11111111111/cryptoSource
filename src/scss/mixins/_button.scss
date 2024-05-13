@@ -1,0 +1,99 @@
+@mixin btn {
+  background-color: var(--green);
+  color: var(--white);
+  font-size: var(--text-size-16);
+  line-height: var(--text-height-135);
+  font-family: var(--text-din);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px 11px;
+  text-transform: uppercase;
+  transition: color .3s ease-in-out, background-color .3s ease-in-out;
+
+  &:hover {
+    background-color: var(--gray-secondary);
+    color: var(--black);
+  }
+}
+
+@mixin btnMore {
+  position: relative;
+  display: flex;
+
+  span {
+    color: var(--green);
+    text-transform: uppercase;
+    font-size: var(--text-size-16);
+    line-height: var(--text-height-135);
+    font-family: var(--text-din);
+    padding-right: 10px;
+    border-bottom: 1px solid var(--green);
+    transition: color .3s ease-in-out, border-color .3s ease-in-out;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background-color: var(--green);
+    position: absolute;
+    transform: rotate(-55deg);
+    left: calc(100% - 5px);
+    top: calc(100% - 11px);
+    transition: background-color .3s ease-in-out;
+  }
+
+  &:hover span {
+    color: var(--gray-secondary);
+    border-color: var(--gray-secondary);
+  }
+
+  &:hover:before {
+    background-color: var(--gray-secondary);
+  }
+}
+
+@mixin switching {
+  width: 50px;
+  height: 50px;
+  background-color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .3s ease-in-out;
+
+  &:disabled {
+    opacity: .2;
+  }
+}
+
+@mixin downloadMore {
+  font-size: var(--text-size-16);
+  line-height: var(--text-height-135);
+  font-family: var(--text-din);
+  color: var(--green);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--green);
+}
+
+@mixin btnBorder {
+  background-color: transparent;
+  color: var(--green);
+  font-size: var(--text-size-16);
+  line-height: var(--text-height-135);
+  font-family: var(--text-din);
+  border: 1px solid var(--green);
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  transition: color .3s ease-in-out, background-color .3s ease-in-out;
+
+  &:hover {
+    background-color: var(--green);
+    color: var(--white);
+  }
+}

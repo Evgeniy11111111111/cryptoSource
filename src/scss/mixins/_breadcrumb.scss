@@ -1,0 +1,48 @@
+@mixin breadcrumb {
+  &-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &-item {
+    font-size: var(--text-size-16);
+    line-height: var(--text-height-145);
+    color: var(--green);
+    position: relative;
+    &:not(:last-child) {
+      padding-right: 12px;
+      margin-right: 6px;
+      &:before {
+        content: "/";
+        font-size: var(--text-size-16);
+        line-height: var(--text-height-145);
+        color: var(--black);
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+  &-link {
+    color: var(--black);
+  }
+}
+
+@mixin breadcrumbMobile {
+  &-item {
+    font-size: var(--text-size-12);
+    line-height: var(--text-height-140);
+    &:not(:last-child) {
+      padding-right: 9px;
+      margin-right: 4px;
+
+      &::before {
+        font-size: var(--text-size-12);
+        line-height: var(--text-height-140);
+      }
+    }
+  }
+}

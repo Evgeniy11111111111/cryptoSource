@@ -1,0 +1,45 @@
+.link-transparent {
+  display: inline-flex;
+  border: .5px solid var(--black);
+  &-text {
+    border-right: .5px solid var(--black);
+    color: var(--black);
+    padding: 19px 40px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.23rem;
+  }
+  &-svg {
+    padding: 0 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .3s ease-in-out;
+
+    svg path {
+      transition: stroke .3s ease-in-out;
+    }
+  }
+
+
+  &:hover &-svg {
+    background-color: var(--bg-yollow-color);
+    svg path {
+      stroke: var(--black);
+    }
+  }
+
+}
+
+.btn-more {
+  display: flex;
+  align-items: center;
+  &-text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.23rem;
+    color: var(--white);
+    padding: 0 12px 0 0;
+  }
+}
+

@@ -1,0 +1,161 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--white);
+  padding: 14px 0;
+  z-index: 3;
+  transition: box-shadow .3s ease-in-out;
+
+  &__nav {
+    margin-right: 60px;
+
+    &-list {
+      gap: var(--gap-30);
+    }
+  }
+
+  &__link {
+    @include hoverLink;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+    background-color: var(--white);
+    height: 100vh;
+    width: 725px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100vh);
+    transition: visibility .3s ease-in-out, opacity .3s ease-in-out, transform .3s ease-in-out;
+    box-shadow: 0px 4px 20px 0px #2727270D;
+    padding-top: 84px;
+
+    &-wrap {
+      padding-left: 100px;
+      margin-right: auto;
+      max-width: 625px;
+      width: 100%;
+    }
+
+    &-content {
+      width: 100%;
+    }
+  }
+
+  &__menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  &__accordion {
+    @include accordion;
+    &-item {
+      &-head {
+        padding: var(--gap-16) 0;
+      }
+      &-body {
+        &-wrap {
+          margin-bottom: 16px;
+        }
+      }
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-12);
+      }
+
+      &-item {
+        font-size: var(--text-size-16);
+        line-height: var(--text-height-145);
+      }
+
+      &-link {
+        transition: color .3s ease-in-out;
+
+        &:hover {
+          color: var(--green);
+        }
+      }
+    }
+    &-link {
+      margin-right: 20px;
+      font-family: var(--text-neo-mid);
+      font-size: var(--text-size-20);
+      line-height: var(--text-height-145);
+    }
+
+    &-svg {
+      width: 22px;
+      height: 22px;
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    &-mobile {
+      display: none;
+    }
+
+  }
+}
+
+.header.active {
+  box-shadow: 0px 1px 15px 0px #27272714;
+}
+
+@media screen and (max-width: 1280px) {
+  .header {
+    &__menu {
+      width: 625px;
+      padding-top: 48px;
+      &-wrap {
+        padding-left: 50px;
+        max-width: 575px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 6px 0;
+
+    &__logo svg {
+      width: 103px;
+      height: 36px;
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    &__menu {
+      width: 100%;
+      &-wrap {
+        max-width: none;
+        margin-right: unset;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    &__accordion {
+      &-mobile {
+        display: block;
+      }
+    }
+  }
+
+}

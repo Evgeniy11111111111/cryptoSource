@@ -1,0 +1,58 @@
+@mixin tabHead {
+  position: relative;
+  margin-bottom: 2px;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: var(--gray-secondary);
+  }
+
+  &-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+  }
+
+  &-item {
+    flex: 0 0 auto;
+    position: relative;
+    padding-bottom: 2px;
+    border-bottom: 3px solid transparent;
+    transition: border-color .3s ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: var(--gap-20);
+    }
+  }
+
+  &-item.active {
+    border-color: var(--green);
+  }
+
+  &-btn {
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: var(--text-size-20);
+    line-height: var(--text-height-135);
+    font-family: var(--text-din);
+    text-transform: uppercase;
+  }
+}
+
