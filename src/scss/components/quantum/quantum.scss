@@ -65,6 +65,18 @@
     }
   }
 
+  &__zoom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #009a6d1a;
+  }
+
   &__pagination {
     @include pagination;
     display: none;

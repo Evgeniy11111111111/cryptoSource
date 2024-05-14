@@ -51,7 +51,7 @@
     max-width: 580px;
     width: 100%;
     color: var(--white);
-    margin-bottom: 158px;
+    margin-bottom: 50px;
   }
 
   &__list {
@@ -60,6 +60,12 @@
 
   &__link {
     @include hoverSocial(var(--white), var(--green));
+  }
+
+  &__more {
+    @include btn;
+    max-width: 190px;
+    width: 100%;
   }
 }
 
@@ -84,7 +90,7 @@
     }
 
     &__descr {
-      margin-bottom: 0;
+      margin-bottom: 30px;
       max-width: 317px;
     }
 
@@ -94,6 +100,10 @@
       svg {
         height: 20px;
       }
+    }
+
+    &__more {
+      max-width: 100%;
     }
   }
 }
