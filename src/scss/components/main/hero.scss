@@ -67,11 +67,11 @@
   .hero {
     margin-top: 48px;
     padding: 20px 0 20px;
-    min-height: 558px;
+    min-height: 312px;
 
     &__text {
       &-wrap {
-        margin-bottom: 118px;
+        margin-bottom: 56px;
       }
       &-first {
         padding: 6px 10px;
@@ -84,7 +84,7 @@
     }
 
     &__descr {
-      margin-bottom: 70px;
+      margin-bottom: 0;
       max-width: 317px;
     }
 

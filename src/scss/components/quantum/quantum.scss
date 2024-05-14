@@ -71,7 +71,8 @@
   }
 
   &__characteristics {
-    &-img {
+    margin-bottom: var(--gap-40);
+    &-swiper {
       margin-bottom: 60px;
     }
 
@@ -80,6 +81,10 @@
         margin-bottom: var(--gap-24);
       }
     }
+  }
+
+  &__accordion {
+    @include accordion;
   }
 
   &__right {
@@ -220,7 +225,7 @@
     }
 
     &__descr {
-      margin-bottom: 70px;
+      margin-bottom: var(--gap-40);
     }
 
     &__swiper {
@@ -237,7 +242,7 @@
     }
 
     &__characteristics {
-      &-img {
+      &-swiper {
         margin-bottom: 20px;
       }
     }

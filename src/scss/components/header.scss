@@ -29,7 +29,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    overflow-y: auto;
+    //overflow-y: auto;
     background-color: var(--white);
     height: 100vh;
     width: 725px;
@@ -44,7 +44,9 @@
       padding-left: 100px;
       margin-right: auto;
       max-width: 625px;
+      height: 100%;
       width: 100%;
+      overflow-y: auto;
     }
 
     &-content {

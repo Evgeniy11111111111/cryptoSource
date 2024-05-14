@@ -15,7 +15,6 @@
     @include btn;
     max-width: 287px;
     width: 100%;
-    margin-bottom: 26px;
   }
 
   &__item {
@@ -102,7 +101,7 @@
       bottom: 0;
       top: calc(100% - 48px);
       width: 100%;
-      margin-bottom: 0;
+      max-width: 100%;
     }
   }
 }

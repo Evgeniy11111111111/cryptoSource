@@ -424,11 +424,16 @@ if (document.getElementById("quantum")) {
     },
   })
 
+  let swiperZoom = new Swiper(".quantum__characteristics-swiper", {
+    zoom: true
+  })
+
   const modal = document.querySelector(".js-submit-modal");
   const btns = document.querySelectorAll(".quantum__button");
   const myModal = new bootstrap.Modal(modal);
   const form = document.querySelector(".quantum__modal-form")
   const myModalOk = new bootstrap.Modal(document.querySelector(".js-modal-ok"));
+  const accordionItems = document.querySelectorAll('.quantum__accordion-item-head')
 
   btns.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -440,6 +445,15 @@ if (document.getElementById("quantum")) {
     e.preventDefault();
     myModal.hide();
     myModalOk.show();
+  })
+
+  accordionItems.forEach(elem => {
+    elem.addEventListener("click", () => {
+      elem.parentElement.classList.contains("is-show") ? accordionNotActive(elem) : accordionActive(elem)
+      accordionItems.forEach(el => {
+        if (el.parentElement !== elem.parentElement) accordionNotActive(el)
+      })
+    })
   })
 }
 

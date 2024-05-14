@@ -9,16 +9,7 @@
     gap: 100px;
   }
 
-  &__img {
-    max-width: 310px;
-    width: 100%;
-    margin-right: var(--gap-30);
-  }
-
-
-
   &__description {
-    max-width: 815px;
     width: 100%;
     gap: var(--gap-50);
   }
@@ -35,16 +26,33 @@
     gap: var(--gap-16);
 
     &-svg {
-      width: 36px;
-      height: 36px;
+      width: 80px;
+      height: 80px;
     }
   }
 }
+
+
 
 @media screen and (max-width: 1110px) {
   .main-about {
     &__block {
       gap: var(--gap-50);
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .main-about {
+    &__icon {
+      &-svg {
+        width: 40px;
+        height: 40px;
+         svg {
+           width: 40px;
+           height: 40px;
+         }
+      }
     }
   }
 }

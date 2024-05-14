@@ -64,6 +64,12 @@
   font-family: var(--text-din);
 }
 
+.text-h11 {
+  font-size: var(--text-size-30);
+  line-height: var(--text-height-110);
+  font-family: var(--text-din);
+}
+
 .descr1 {
   font-size: var(--text-size-16);
   line-height: var(--text-height-145);
@@ -117,6 +123,11 @@
 @media screen and (max-width: 991px) {
   .text-h1 {
     font-size: var(--text-size-90);
+  }
+
+  .text-h11 {
+    font-size: var(--text-size-14);
+    line-height: var(--text-height-135);
   }
 }
 
