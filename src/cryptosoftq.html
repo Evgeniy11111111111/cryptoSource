@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+@include('partials/head.html')
+
+<body id="quantum">
+<div class="site-container">
+  <header class="header header__absolut">
+    @include('partials/header.html')
+  </header>
+  <main class="main">
+    <section class="quantum">
+      <div class="custom-container container-fluid">
+        <div class="quantum_content">
+          <nav class="breadcrumb-custom quantum__breadcrumb">
+            <ul class="breadcrumb-custom-list list-reset">
+              <li class="breadcrumb-custom-item">
+                <a href="/" class="breadcrumb-custom-link">Главная</a>
+              </li>
+              <li class="breadcrumb-custom-item">
+                <a href="/quantum.html" class="breadcrumb-custom-link">Квантовые технологии</a>
+              </li>
+              <li class="breadcrumb-custom-item">
+                Cryptosoft-Q. Квантовая система выработки и распределения ключей
+              </li>
+            </ul>
+          </nav>
+          <div class="quantum__block d-flex">
+            <div class="quantum__left col-12 col-lg-8">
+              @include('partials/cryptosoftq/left.html')
+            </div>
+            <div class="quantum__right d-none d-lg-block col-lg-4">
+              @include('partials/quantum/right.html')
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="modal fade js-submit-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered quantum__modal-dialog">
+      <div class="modal-content quantum__modal-content">
+        <div class="modal-header quantum__modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body quantum__modal-body">
+          <h2 class="quantum__modal-title text-uppercase text-h8 text-h8-2">
+            ОТправьте запрос на последнюю версию операционной системы
+          </h2>
+          <div class="quantum__modal-form-wrap">
+            <form class="quantum__modal-form d-flex flex-column">
+              <div class="quantum__form-wrap-input input-form__wrap">
+                <label class="input-form__label">ФИО</label>
+                <input placeholder="ФИО" class="input-form">
+              </div>
+              <div class="quantum__form-inputs">
+                <div class="quantum__form-wrap-input input-form__wrap">
+                  <label class="input-form__label">ФИО</label>
+                  <input placeholder="ФИО" class="input-form">
+                </div>
+                <div class="quantum__form-wrap-input input-form__wrap">
+                  <label class="input-form__label">Телефон</label>
+                  <input placeholder="Телефон" class="input-form">
+                </div>
+                <div class="quantum__form-wrap-input input-form__wrap">
+                  <label class="input-form__label">E-mail</label>
+                  <input placeholder="E-mail" class="input-form">
+                </div>
+                <div class="quantum__form-wrap-input input-form__wrap">
+                  <label class="input-form__label">Специальность</label>
+                  <input placeholder="Специальность" class="input-form">
+                </div>
+              </div>
+              <div class="quantum__form-send d-flex flex-column flex-md-row align-items-md-center">
+                <button class="quantum__form-btn btn-reset">
+                  Отправить
+                </button>
+                <div class="form-check quantum__form-check">
+                  <input type="checkbox" class="form-check-input quantum__form-check-input" required>
+                  <label class="descr4 form-check-label quantum__form-check-label">
+                    нажимая кнопку “Отправить”, я соглашаюсь с условиями
+                    <br/>
+                    <a class="quantum__form-check-link">Политики обработки персональных данных</a>
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade js-modal-ok" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered quantum__modal-dialog">
+      <div class="modal-content quantum__modal-content">
+        <div class="modal-header quantum__modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body quantum__modal-body">
+          <h2 class="quantum__modal-title text-uppercase text-center text-h8 text-h8-2">
+            запрос отправлен
+          </h2>
+          <p class="quantum__modal-descr descr1 text-center">
+            Ваш запрос принят в обработку.
+          </p>
+          <p class="quantum__modal-descr descr1 text-center">
+            Мы свяжемся с вами в ближайшее время
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="button-up btn-reset">
+    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 20.0664L12 5.06641M12 5.06641L5.25 11.8164M12 5.06641L18.75 11.8164" stroke="#009A6D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <footer class="footer">
+    @include('partials/footer.html')
+  </footer>
+</div>
+</body>
+<script>
+</script>
+</html>

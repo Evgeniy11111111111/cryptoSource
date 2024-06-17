@@ -121,6 +121,9 @@
     &-link {
       color: var(--black);
       text-transform: uppercase;
+      &-green {
+        color: var(--green);
+      }
     }
 
     &-title {

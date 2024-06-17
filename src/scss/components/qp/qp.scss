@@ -28,6 +28,9 @@
     max-width: 712px;
     width: 100%;
     margin-bottom: 70px;
+    p:not(:last-child) {
+      margin-bottom: 20px;
+    }
   }
 
   &__item {
@@ -200,6 +203,17 @@
       &-input[type=checkbox] {
         border-radius: 0;
       }
+    }
+  }
+
+  &__accordion {
+    @include ac-multi;
+    &-second {
+      padding: 0 0 0 10px;
+    }
+
+    &-list {
+      padding-top: 20px;
     }
   }
 }

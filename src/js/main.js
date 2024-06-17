@@ -68,85 +68,6 @@ btnUp.addEventListener('click', () => {
     behavior: 'smooth'
   })
 })
-function initMap() {
-  var myMap = new ymaps.Map("js-map-penza", {
-    center: [53.184451071233134,45.007014999999924],
-    zoom: 13,
-    minZoom: 13,
-    controls: []
-  }, {
-    minZoom: 13,
-  })
-
-
-  var placemarkDiv = ymaps.templateLayoutFactory.createClass(`
-  <div class="placemark-custom">
-    <span class="placemark__layout">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15.645 7.54741C15.645 8.93117 14.8282 10.8548 13.6386 12.8497C12.5829 14.6203 11.2788 16.374 10.1427 17.7311C8.94696 16.3197 7.63756 14.5599 6.59452 12.7978C5.42654 10.8246 4.64502 8.93422 4.64502 7.54741C4.64502 4.79601 7.06981 2.5 10.145 2.5C13.2202 2.5 15.645 4.79601 15.645 7.54741Z" fill="#009A6D" stroke="#009A6D"/>
-        <circle cx="10.145" cy="8" r="2.5" fill="white" stroke="#009A6D"/>
-      </svg>
-    </span>
-  </div>
-  `)
-
-  var circlePlacemark = new ymaps.Placemark([53.184451071233134,45.007014999999924],{}, {
-    iconLayout: placemarkDiv,
-    iconShape: {
-      type: 'Circle',
-      coordinates: [0, 0],
-      radius: 30
-    }
-  })
-  myMap.geoObjects.add(circlePlacemark);
-  myMap.controls.remove('searchControl');
-  myMap.controls.remove('trafficControl');
-  myMap.controls.remove('typeSelector');
-  myMap.controls.remove('fullscreenControl');
-  myMap.controls.remove('rulerControl');
-}
-
-ymaps.ready(initMap)
-
-function initMapMoscow() {
-  var myMap = new ymaps.Map("js-map-moscow", {
-    center: [55.7869050689375,37.67187549999997],
-    zoom: 13,
-    minZoom: 13,
-    controls: []
-  }, {
-    minZoom: 13,
-  })
-
-
-  var placemarkDiv = ymaps.templateLayoutFactory.createClass(`
-  <div class="placemark-custom">
-    <span class="placemark__layout">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15.645 7.54741C15.645 8.93117 14.8282 10.8548 13.6386 12.8497C12.5829 14.6203 11.2788 16.374 10.1427 17.7311C8.94696 16.3197 7.63756 14.5599 6.59452 12.7978C5.42654 10.8246 4.64502 8.93422 4.64502 7.54741C4.64502 4.79601 7.06981 2.5 10.145 2.5C13.2202 2.5 15.645 4.79601 15.645 7.54741Z" fill="#009A6D" stroke="#009A6D"/>
-        <circle cx="10.145" cy="8" r="2.5" fill="white" stroke="#009A6D"/>
-      </svg>
-    </span>
-  </div>
-  `)
-
-  var circlePlacemark = new ymaps.Placemark([55.7869050689375,37.67187549999997],{}, {
-    iconLayout: placemarkDiv,
-    iconShape: {
-      type: 'Circle',
-      coordinates: [0, 0],
-      radius: 30
-    }
-  })
-  myMap.geoObjects.add(circlePlacemark);
-  myMap.controls.remove('searchControl');
-  myMap.controls.remove('trafficControl');
-  myMap.controls.remove('typeSelector');
-  myMap.controls.remove('fullscreenControl');
-  myMap.controls.remove('rulerControl');
-}
-
-ymaps.ready(initMapMoscow)
 
 if (document.getElementById("index")) {
   var swiper = new Swiper(".after-hero__swiper", {
@@ -396,18 +317,39 @@ if (document.getElementById("qp")) {
     myModalOk.show();
   })
 
-  let swiperQP = new Swiper(".qp__example-swiper", {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    pagination: {
-      el: ".qp__example-pagination",
-      clickable: true
-    },
-    navigation: {
-      nextEl: ".qp__swiper-next",
-      prevEl: ".qp__swiper-prev"
-    },
-  })
+  if (document.querySelectorAll(".qp__example-swiper")) {
+    document.querySelectorAll(".qp__example-swiper").forEach(elem => {
+      let swiperQP = new Swiper(".qp__example-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+          el: ".qp__example-pagination",
+          clickable: true
+        },
+        navigation: {
+          nextEl: ".qp__swiper-next",
+          prevEl: ".qp__swiper-prev"
+        },
+      })
+    })
+  }
+
+
+  if (document.querySelectorAll('.qp__example-slide') && document.querySelectorAll('.qp__example-slide').length < 2) {
+    document.querySelectorAll(".qp__swiper-btn").forEach(elem => {
+      elem.classList.add('d-none')
+    })
+  }
+
+  new Accordion(".qp__accordion")
+
+  if (document.querySelector(".qp__accordion-second")) {
+    document.querySelectorAll(".qp__accordion-second").forEach(elem => {
+      new Accordion(elem)
+    })
+  }
+
+
 }
 
 if (document.getElementById("quantum")) {
@@ -485,3 +427,84 @@ function accordionNotActive(item) {
     panel.style.maxHeight = null
   }
 }
+
+
+function initMap() {
+  var myMap = new ymaps.Map("js-map-penza", {
+    center: [53.184451071233134,45.007014999999924],
+    zoom: 13,
+    minZoom: 13,
+    controls: []
+  }, {
+    minZoom: 13,
+  })
+
+
+  var placemarkDiv = ymaps.templateLayoutFactory.createClass(`
+  <div class="placemark-custom">
+    <span class="placemark__layout">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.645 7.54741C15.645 8.93117 14.8282 10.8548 13.6386 12.8497C12.5829 14.6203 11.2788 16.374 10.1427 17.7311C8.94696 16.3197 7.63756 14.5599 6.59452 12.7978C5.42654 10.8246 4.64502 8.93422 4.64502 7.54741C4.64502 4.79601 7.06981 2.5 10.145 2.5C13.2202 2.5 15.645 4.79601 15.645 7.54741Z" fill="#009A6D" stroke="#009A6D"/>
+        <circle cx="10.145" cy="8" r="2.5" fill="white" stroke="#009A6D"/>
+      </svg>
+    </span>
+  </div>
+  `)
+
+  var circlePlacemark = new ymaps.Placemark([53.184451071233134,45.007014999999924],{}, {
+    iconLayout: placemarkDiv,
+    iconShape: {
+      type: 'Circle',
+      coordinates: [0, 0],
+      radius: 30
+    }
+  })
+  myMap.geoObjects.add(circlePlacemark);
+  myMap.controls.remove('searchControl');
+  myMap.controls.remove('trafficControl');
+  myMap.controls.remove('typeSelector');
+  myMap.controls.remove('fullscreenControl');
+  myMap.controls.remove('rulerControl');
+}
+
+ymaps.ready(initMap)
+
+function initMapMoscow() {
+  var myMap = new ymaps.Map("js-map-moscow", {
+    center: [55.7869050689375,37.67187549999997],
+    zoom: 13,
+    minZoom: 13,
+    controls: []
+  }, {
+    minZoom: 13,
+  })
+
+
+  var placemarkDiv = ymaps.templateLayoutFactory.createClass(`
+  <div class="placemark-custom">
+    <span class="placemark__layout">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.645 7.54741C15.645 8.93117 14.8282 10.8548 13.6386 12.8497C12.5829 14.6203 11.2788 16.374 10.1427 17.7311C8.94696 16.3197 7.63756 14.5599 6.59452 12.7978C5.42654 10.8246 4.64502 8.93422 4.64502 7.54741C4.64502 4.79601 7.06981 2.5 10.145 2.5C13.2202 2.5 15.645 4.79601 15.645 7.54741Z" fill="#009A6D" stroke="#009A6D"/>
+        <circle cx="10.145" cy="8" r="2.5" fill="white" stroke="#009A6D"/>
+      </svg>
+    </span>
+  </div>
+  `)
+
+  var circlePlacemark = new ymaps.Placemark([55.7869050689375,37.67187549999997],{}, {
+    iconLayout: placemarkDiv,
+    iconShape: {
+      type: 'Circle',
+      coordinates: [0, 0],
+      radius: 30
+    }
+  })
+  myMap.geoObjects.add(circlePlacemark);
+  myMap.controls.remove('searchControl');
+  myMap.controls.remove('trafficControl');
+  myMap.controls.remove('typeSelector');
+  myMap.controls.remove('fullscreenControl');
+  myMap.controls.remove('rulerControl');
+}
+
+ymaps.ready(initMapMoscow)
