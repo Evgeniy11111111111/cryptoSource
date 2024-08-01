@@ -1,16 +1,41 @@
-@mixin pagination {
-  margin-top: 20px;
+@mixin pagination($width, $color) {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $width;
   .swiper-pagination-bullet {
-    border-radius: 0;
-    width: 20px;
-    height: 4px;
+    border-radius: 50%;
+    border: 1px solid $color;
+    width: 8px;
+    height: 8px;
     opacity: 1;
-    background-color: var(--gray-secondary);
+    background-color: transparent;
   }
 
   .swiper-pagination-bullet-active {
-    background-color: var(--green);
+    background-color: $color;
+  }
+}
+
+@mixin btnArray($color, $svgColorHover) {
+  width: 26px;
+  height: 26px;
+  border: 1px solid $color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: background-color .3s ease-in-out;
+
+  &:hover {
+    background-color: $color;
+    svg path {
+      fill: $svgColorHover
+    }
+  }
+
+  svg path {
+    fill: $color;
+    transition: fill .3s ease-in-out;
   }
 }

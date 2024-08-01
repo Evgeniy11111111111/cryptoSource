@@ -75,7 +75,7 @@
       margin-bottom: var(--gap-30);
     }
     &-pagination {
-      @include pagination;
+      //@include pagination;
       display: none;
     }
 

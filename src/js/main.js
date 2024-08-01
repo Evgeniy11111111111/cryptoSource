@@ -70,45 +70,51 @@ btnUp.addEventListener('click', () => {
 })
 
 if (document.getElementById("index")) {
-  var swiper = new Swiper(".after-hero__swiper", {
+  new Swiper(".hero__left-swiper", {
     slidesPerView: 1,
-    spaceBetween: 10,
-    grid: {
-      rows: 1,
-      fill: "row"
-    },
-    breakpoints: {
-      567: {
-        slidesPerView: 2,
-        grid: {
-          rows: 2,
-          fill: "row"
-        },
-        spaceBetween: 10,
-      },
-      992: {
-        slidesPerView: 3,
-        grid: {
-          rows: 2,
-          fill: "row"
-        },
-        spaceBetween: 30,
-      },
-      1200: {
-        slidesPerView: 4,
-        grid: {
-          rows: 2,
-          fill: "row"
-        },
-        spaceBetween: 30,
-      }
+    spaceBetween: 0,
+    navigation: {
+      nextEl: ".hero__left-swiper-next",
+      prevEl: ".hero__left-swiper-prev"
     },
     pagination: {
-      el: ".after-hero__swiper-pagination",
+      el: ".hero__left-swiper-pagination",
       clickable: true
-    }
+    },
+  })
 
-  });
+  new Swiper(".hero__right-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    pagination: {
+      el: ".hero__right-swiper-pagination",
+      clickable: true
+    },
+  })
+
+  const items = document.querySelectorAll(".after-hero__box")
+  const btn = document.querySelector(".after-hero__btn")
+  console.log(window.innerWidth)
+  if (window.innerWidth < 768) {
+    afterHeroMore(3, btn, items)
+  } else if (window.innerWidth < 991) {
+    afterHeroMore(5, btn, items)
+  }
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 768) {
+      if (!btn.classList.contains("d-none")) {
+        afterHeroMore(3, btn, items)
+      }
+    } else if (window.innerWidth < 991) {
+      if (!btn.classList.contains("d-none")) {
+        afterHeroMore(5, btn, items)
+      }
+    } else {
+      items.forEach(item => item.classList.remove("d-none"))
+
+    }
+  })
 
   let swiper2 = new Swiper(".customers__swiper", {
     slidesPerView: 2,
@@ -136,6 +142,23 @@ if (document.getElementById("index")) {
       }
     }
   })
+}
+
+function afterHeroMore (count, btn, items) {
+  if (items.length > count) {
+    items.forEach((item, index) => {
+      if (index > count) {
+        item.classList.add("d-none")
+      }
+    })
+
+    btn.addEventListener("click", () => {
+      items.forEach((item, index) => {
+        item.classList.remove("d-none");
+      })
+      btn.classList.add("d-none")
+    })
+  }
 }
 
 if (document.getElementById("about")) {
@@ -425,6 +448,19 @@ function accordionNotActive(item) {
   let panel = item.nextElementSibling;
   if (panel.style.maxHeight) {
     panel.style.maxHeight = null
+  }
+}
+
+function resizeForHeroLeft (block) {
+  const windowWidth = window.innerWidth
+  const containerWidth = container.scrollWidth
+
+  if (windowWidth > containerWidth) {
+    const widthForMenu = (windowWidth - containerWidth) / 2
+    block.style.marginLeft = widthForMenu + 'px'
+    console.log(widthForMenu)
+  } else {
+    block.style.marginLeft = '0'
   }
 }
 

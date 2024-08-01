@@ -1,25 +1,30 @@
 .text-h1 {
-  font-family: var(--text-din);
-  font-size: var(--text-size-120);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 700;
+  font-size: var(--text-size-36);
   line-height: var(--text-height-100);
 }
 
+
 .text-h2 {
-  font-size: var(--text-size-60);
-  line-height: var(--text-height-100);
-  font-family: var(--text-din);
+  font-size: var(--text-size-35);
+  line-height: var(--text-height-120);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 700;
 }
 
 .text-h3 {
   font-size: var(--text-size-16);
   line-height: var(--text-height-125);
-  font-family: var(--text-din);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .text-h3-all {
   font-size: var(--text-size-18);
   line-height: var(--text-height-145);
-  font-family: var(--text-din);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .text-h4 {
@@ -29,73 +34,92 @@
 }
 
 .text-h5 {
-  font-size: var(--text-size-30);
-  line-height: var(--text-height-125);
-  font-family: var(--text-din);
+  font-size: var(--text-size-16);
+  line-height: var(--text-height-140);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .text-h6 {
-  font-size: var(--text-size-40);
-  line-height: var(--text-height-100);
-  font-family: var(--text-din);
+  font-size: var(--text-size-50);
+  line-height: var(--text-height-110);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .text-h7 {
   font-size: var(--text-size-20);
   line-height: var(--text-height-135);
-  font-family: var(--text-din);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .text-h8 {
   font-size: var(--text-size-40);
   line-height: var(--text-height-120);
-  font-family: var(--text-din);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .text-h9 {
-  font-size: var(--text-size-18);
+  font-size: var(--text-size-16);
   line-height: var(--text-height-135);
-  font-family: var(--text-din);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .text-h9-all {
   font-size: var(--text-size-18);
   line-height: var(--text-height-135);
-  font-family: var(--text-din);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .text-h10 {
   font-size: var(--text-size-24);
   line-height: var(--text-height-120);
-  font-family: var(--text-din);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .text-h11 {
-  font-size: var(--text-size-30);
-  line-height: var(--text-height-110);
-  font-family: var(--text-din);
+  font-size: var(--text-size-18);
+  line-height: var(--text-height-120);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
+.text-h12 {
+  font-family: var(--text-sofia-condensed);
+  font-weight: 700;
+  font-size: var(--text-size-28);
+  line-height: var(--text-height-100);
+}
+
+
 .descr1 {
-  font-size: var(--text-size-16);
-  line-height: var(--text-height-145);
+  font-size: var(--text-size-13);
+  line-height: var(--text-height-140);
+  font-weight: var(--text-regular);
 }
 
 .descr2 {
-  font-size: var(--text-size-20);
+  font-size: var(--text-size-16);
   line-height: var(--text-height-145);
 }
 
 .descr3 {
   font-size: var(--text-size-22);
   line-height: var(--text-height-130);
-  font-family: var(--text-din);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .descr3-all {
   font-size: var(--text-size-22);
   line-height: var(--text-height-130);
-  font-family: var(--text-din);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .descr4 {
@@ -108,42 +132,45 @@
   line-height: var(--text-height-145);
 }
 
+.descr6 {
+  font-size: var(--text-size-14);
+  line-height: var(--text-height-120);
+  font-family: var(--text-sofia-condensed);
+  font-weight: var(--text-semibold);
+}
+
+.descr7 {
+  font-size: var(--text-size-10);
+  line-height: var(--text-height-140);
+  font-family: var(--text-sofia-condensed);
+  font-weight: var(--text-semibold);
+}
+
 .text-button {
   font-size: var(--text-size-16);
   line-height: var(--text-height-135);
-  font-family: var(--text-din);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .text-number {
   font-size: var(--text-size-90);
   line-height: var(--text-height-100);
-  font-family: var(--text-din);
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 .text-button-all {
   font-size: var(--text-size-16);
   line-height: var(--text-height-135);
-  font-family: var(--text-din);
-}
-
-@media screen and (max-width: 991px) {
-  .text-h1 {
-    font-size: var(--text-size-90);
-  }
-
-  .text-h11 {
-    font-size: var(--text-size-14);
-    line-height: var(--text-height-135);
-  }
+  font-family: var(--text-sofia-condensed);
+  font-weight: 600;
 }
 
 @media screen and (max-width: 767px) {
-  .text-h1 {
-    font-size: var(--text-size-35);
-  }
 
   .text-h2 {
-    font-size: var(--text-size-30);
+    font-size: var(--text-size-28);
     line-height: var(--text-height-110);
   }
 
@@ -157,12 +184,12 @@
   }
 
   .text-h5 {
-    font-size: var(--text-size-30);
-    line-height: var(--text-height-125);
+    font-size: var(--text-size-14);
+    line-height: var(--text-height-140);
   }
 
   .text-h6 {
-    font-size: var(--text-size-24);
+    font-size: var(--text-size-40);
   }
 
   .text-h6-h9 {
@@ -210,6 +237,10 @@
 
   .descr5-1 {
     font-size: var(--text-size-16);
+  }
+
+  .descr7 {
+    font-size: var(--text-size-12);
   }
 
   .text-button {

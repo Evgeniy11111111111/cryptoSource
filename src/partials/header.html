@@ -16,27 +16,104 @@
             <nav class="header__nav">
                 <ul class="header__nav-list list-reset d-flex align-items-center">
                     <li class="header__nav-item">
-                        <a href="about.html" class="header__link descr1">
-                            О компании
-                        </a>
+                        <div class="dropdown header__dropdown">
+                            <button class="btn descr1 header__dropdown_btn p-0 border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="header__dropdown_btn-text">
+                                    О компании
+                                </span>
+                                <span class="header__dropdown_btn-svg">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.66112 5.04659C3.87012 4.84562 4.20247 4.85214 4.40344 5.06114L7 7.81757L9.59656 5.06114C9.79753 4.85214 10.1299 4.84562 10.3389 5.04659C10.5479 5.24755 10.5544 5.5799 10.3534 5.78891L7.37844 8.93891C7.27946 9.04185 7.14281 9.10003 7 9.10003C6.85719 9.10003 6.72055 9.04185 6.62156 8.93891L3.64656 5.78891C3.4456 5.5799 3.45211 5.24755 3.66112 5.04659Z" fill="#00B883"/>
+                                    </svg>
+                                </span>
+                            </button>
+                            <ul class="dropdown-menu  header__dropdown_menu">
+                                <li class="header__dropdown_item">
+                                    <a class="dropdown-item header__dropdown_item-link" href="#">
+                                        Направления деятельности
+                                    </a>
+                                </li>
+                                <li class="header__dropdown_item">
+                                    <a class="dropdown-item header__dropdown_item-link" href="#">
+                                        История
+                                    </a>
+                                </li>
+                                <li class="header__dropdown_item">
+                                    <a class="dropdown-item header__dropdown_item-link" href="#">
+                                        Лицензии
+                                    </a>
+                                </li>
+                                <li class="header__dropdown_item">
+                                    <a class="dropdown-item header__dropdown_item-link" href="#">
+                                        Мероприятия
+                                    </a>
+                                </li>
+                                <li class="header__dropdown_item">
+                                    <a class="dropdown-item header__dropdown_item-link" href="#">
+                                        Контакты
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="header__nav-item">
-                        <a href="work.html" class="header__link descr1">
-                            Работа в Криптософт
-                        </a>
+                        <div class="dropdown header__dropdown">
+                            <button class="btn header__dropdown_btn p-0 border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="descr1 header__dropdown_btn-text">
+                                    Решения
+                                </span>
+                                <span class="header__dropdown_btn-svg">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.66112 5.04659C3.87012 4.84562 4.20247 4.85214 4.40344 5.06114L7 7.81757L9.59656 5.06114C9.79753 4.85214 10.1299 4.84562 10.3389 5.04659C10.5479 5.24755 10.5544 5.5799 10.3534 5.78891L7.37844 8.93891C7.27946 9.04185 7.14281 9.10003 7 9.10003C6.85719 9.10003 6.72055 9.04185 6.62156 8.93891L3.64656 5.78891C3.4456 5.5799 3.45211 5.24755 3.66112 5.04659Z" fill="#00B883"/>
+                                    </svg>
+                                </span>
+                            </button>
+                            <ul class="dropdown-menu  header__dropdown_menu">
+                                <li class="header__dropdown_item">
+                                    <a class="dropdown-item header__dropdown_item-link" href="#">
+                                        Доверенная операционная система QP OС
+                                    </a>
+                                </li>
+                                <li class="header__dropdown_item">
+                                    <a class="dropdown-item header__dropdown_item-link" href="#">
+                                        Программные средства защиты информации линейки QP (ПСЗИ)
+                                    </a>
+                                </li>
+                                <li class="header__dropdown_item">
+                                    <a class="dropdown-item header__dropdown_item-link" href="#">
+                                        Аппаратные и аппаратно-программные средства защиты информации
+                                    </a>
+                                </li>
+                                <li class="header__dropdown_item">
+                                    <a class="dropdown-item header__dropdown_item-link" href="#">
+                                        Защищенный мессенджер QP Криптофон
+                                    </a>
+                                </li>
+                                <li class="header__dropdown_item">
+                                    <a class="dropdown-item header__dropdown_item-link" href="#">
+                                        Квантовые технологии
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="header__nav-item">
                         <a href="news.html" class="header__link descr1">
                             Новости
                         </a>
                     </li>
+                    <li class="header__nav-item">
+                        <a href="news.html" class="header__link descr1">
+                            Вакансии
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
             <button class="header__btn burger-btn btn-reset">
-                <span></span>
-                <span></span>
-                <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
             </button>
         </div>
     </div>
@@ -44,17 +121,10 @@
         <div class="header__menu-wrap">
             <div class="header__menu-content">
                 <div class="header__accordion">
-                    <div class="header__accordion-item header__accordion-mobile">
-                        <div class="header__accordion-item-head">
-                            <a href="about.html" class="header__accordion-link">
-                                О компании
-                            </a>
-                        </div>
-                    </div>
                     <div class="header__accordion-item">
                         <div class="header__accordion-item-head js-accordion-header">
                             <div class="header__accordion-link">
-                                Квантовые технологии
+                                О компании
                             </div>
                             <span class="header__accordion-svg">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,17 +137,27 @@
                                 <ul class="header__accordion-item-list list-reset">
                                     <li class="header__accordion-item-item">
                                         <a href="quantum.html" class="header__accordion-item-link">
-                                            Квантовые технологии
+                                            Направления деятельности
                                         </a>
                                     </li>
                                     <li class="header__accordion-item-item">
                                         <a href="cryptosoftq.html" class="header__accordion-item-link">
-                                            Cryptosoft-Q. Квантовая система выработки и распределения ключей
+                                            История
                                         </a>
                                     </li>
                                     <li class="header__accordion-item-item">
                                         <a href="laboratory.html" class="header__accordion-item-link">
-                                            Лаборатория квантовой оптики
+                                            Лицензии
+                                        </a>
+                                    </li>
+                                    <li class="header__accordion-item-item">
+                                        <a href="laboratory.html" class="header__accordion-item-link">
+                                            Мероприятия
+                                        </a>
+                                    </li>
+                                    <li class="header__accordion-item-item">
+                                        <a href="laboratory.html" class="header__accordion-item-link">
+                                            Контакты
                                         </a>
                                     </li>
                                 </ul>
@@ -87,7 +167,7 @@
                     <div class="header__accordion-item">
                         <div class="header__accordion-item-head js-accordion-header">
                             <div class="header__accordion-link">
-                                QP OS
+                                Решения
                             </div>
                             <span class="header__accordion-svg">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,202 +180,44 @@
                                 <ul class="header__accordion-item-list list-reset">
                                     <li class="header__accordion-item-item">
                                         <a href="qp.html" class="header__accordion-item-link">
-                                            Операционная система QP OS
+                                            Доверенная операционная система QP OС
                                         </a>
                                     </li>
-<!--                                    <li class="header__accordion-item-item">-->
-<!--                                        <a class="header__accordion-item-link">-->
-<!--                                            Защищенный мессенджер QP Криптофон-->
-<!--                                        </a>-->
-<!--                                    </li>-->
                                     <li class="header__accordion-item-item">
                                         <a href="cloudqp.html" class="header__accordion-item-link">
-                                            Облачные технологии операционной системы QP ОС
+                                            Программные средства защиты информации линейки QP (ПСЗИ)
                                         </a>
                                     </li>
-<!--                                    <li class="header__accordion-item-item">-->
-<!--                                        <a class="header__accordion-item-link">-->
-<!--                                            Гипервизор QP VMM-->
-<!--                                        </a>-->
-<!--                                    </li>-->
-<!--                                    <li class="header__accordion-item-item">-->
-<!--                                        <a class="header__accordion-item-link">-->
-<!--                                            Кластер виртуальных машин-->
-<!--                                        </a>-->
-<!--                                    </li>-->
-<!--                                    <li class="header__accordion-item-item">-->
-<!--                                        <a class="header__accordion-item-link">-->
-<!--                                            Распределенная файловая система-->
-<!--                                        </a>-->
-<!--                                    </li>-->
-<!--                                    <li class="header__accordion-item-item">-->
-<!--                                        <a class="header__accordion-item-link">-->
-<!--                                            Тонкий клиент и сервер терминалов-->
-<!--                                        </a>-->
-<!--                                    </li>-->
-<!--                                    <li class="header__accordion-item-item">-->
-<!--                                        <a class="header__accordion-item-link">-->
-<!--                                            Система хранения данных-->
-<!--                                        </a>-->
-<!--                                    </li>-->
-<!--                                    <li class="header__accordion-item-item">-->
-<!--                                        <a class="header__accordion-item-link">-->
-<!--                                            Система электронного документооборота QP Docs M-->
-<!--                                        </a>-->
-<!--                                    </li>-->
                                     <li class="header__accordion-item-item">
                                         <a href="workstation.html" class="header__accordion-item-link">
-                                            Рабочая станция QP ОС
+                                            Аппаратные и аппаратно-программные средства защиты информации
                                         </a>
                                     </li>
                                     <li class="header__accordion-item-item">
                                         <a href="serverqp.html" class="header__accordion-item-link">
-                                            Серверные технологии операционной системы QP ОС
+                                            Защищенный мессенджер QP Криптофон
                                         </a>
                                     </li>
                                     <li class="header__accordion-item-item">
                                         <a href="mechanisms.html" class="header__accordion-item-link">
-                                            Основные механизмы безопасности
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a href="developmenttools.html" class="header__accordion-item-link">
-                                            Средства разработки
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a href="verification.html" class="header__accordion-item-link">
-                                            Удостоверяющий центр
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a href="informationsecurity.html" class="header__accordion-item-link">
-                                            Средство защиты информации на основе технологии виртуализации
+                                            Квантовые технологии
                                         </a>
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                    <div class="header__accordion-item">
-                        <div class="header__accordion-item-head js-accordion-header">
-                            <div class="header__accordion-link">
-                                Программные средства защиты информации линейки QP (ПСЗИ)
-                            </div>
-                            <span class="header__accordion-svg">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M22.1547 10.8141C21.7069 10.3834 20.9947 10.3974 20.5641 10.8453L15 16.7519L9.43594 10.8453C9.00529 10.3974 8.29312 10.3834 7.84525 10.8141C7.39738 11.2447 7.38342 11.9569 7.81406 12.4047L14.1891 19.1547C14.4012 19.3753 14.694 19.5 15 19.5C15.306 19.5 15.5988 19.3753 15.8109 19.1547L22.1859 12.4047C22.6166 11.9569 22.6026 11.2447 22.1547 10.8141Z" fill="#009A6D"/>
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="header__accordion-item-body">
-                            <div class="header__accordion-item-body-wrap">
-                                <ul class="header__accordion-item-list list-reset">
-                                    <li class="header__accordion-item-item">
-                                        <a href="protection.html" class="header__accordion-item-link">
-                                            ПСЗИ для Windows
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a class="header__accordion-item-link">
-                                            ПСЗИ для Microsoft Office
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a class="header__accordion-item-link">
-                                            ПСЗИ для СУДБ
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a class="header__accordion-item-link">
-                                            ПСЗИ для почтового сервера Microsoft Exchange
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a class="header__accordion-item-link">
-                                            ПСЗИ средств интеграции Microsoft BizTalk Server
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a class="header__accordion-item-link">
-                                            ПСЗИ системы создания и поддержки интранет-порталов Microsoft SharePoint Server
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a class="header__accordion-item-link">
-                                            ПСЗИ корпоративных носителей информации
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a class="header__accordion-item-link">
-                                            ПСЗИ конфиденциальных данных
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="header__accordion-item">
-                        <div class="header__accordion-item-head js-accordion-header">
-                            <div class="header__accordion-link">
-                                Аппаратные и аппаратно-программные средства защиты информации
-                            </div>
-                            <span class="header__accordion-svg">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M22.1547 10.8141C21.7069 10.3834 20.9947 10.3974 20.5641 10.8453L15 16.7519L9.43594 10.8453C9.00529 10.3974 8.29312 10.3834 7.84525 10.8141C7.39738 11.2447 7.38342 11.9569 7.81406 12.4047L14.1891 19.1547C14.4012 19.3753 14.694 19.5 15 19.5C15.306 19.5 15.5988 19.3753 15.8109 19.1547L22.1859 12.4047C22.6166 11.9569 22.6026 11.2447 22.1547 10.8141Z" fill="#009A6D"/>
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="header__accordion-item-body">
-                            <div class="header__accordion-item-body-wrap">
-                                <ul class="header__accordion-item-list list-reset">
-                                    <li class="header__accordion-item-item">
-                                        <a href="protection.html" class="header__accordion-item-link">
-                                            Аппаратно-программный комплекс для криптографической защиты информации
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a class="header__accordion-item-link">
-                                            Криптомаршрутизатор
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a class="header__accordion-item-link">
-                                            Доверенный коммутатор
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a class="header__accordion-item-link">
-                                            Перспективный аппаратно-программный модуль доверенной загрузки
-                                        </a>
-                                    </li>
-                                    <li class="header__accordion-item-item">
-                                        <a class="header__accordion-item-link">
-                                            Защищенный флэш-накопитель с аппаратным шифратором
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="header__accordion-item">
-                        <div class="header__accordion-item-head">
-                            <a href="qryptofon.html" class="header__accordion-link">
-                                Защищенный мессенджер QP Криптофон
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header__accordion-item header__accordion-mobile">
-                        <div class="header__accordion-item-head">
-                            <a href="work.html" class="header__accordion-link">
-                                Работа в Криптософт
-                            </a>
                         </div>
                     </div>
                     <div class="header__accordion-item header__accordion-mobile">
                         <div class="header__accordion-item-head">
                             <a href="news.html" class="header__accordion-link">
                                 Новости
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header__accordion-item header__accordion-mobile">
+                        <div class="header__accordion-item-head">
+                            <a href="work.html" class="header__accordion-link">
+                                Вакансии
                             </a>
                         </div>
                     </div>

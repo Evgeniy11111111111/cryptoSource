@@ -1,32 +1,51 @@
 .after-hero {
-  padding: 30px 0 70px;
-  &__swiper {
-    margin-right: 1px;
-    &-slide {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid var(--gray);
-      padding: 20px;
-      box-sizing: border-box;
-      height: auto !important;
-      transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
-      &-wrap {
-        margin-right: 1px;
-      }
-      &:hover {
-        background-color: var(--green);
-        border-color: var(--green);
-        h3 {
-          color: var(--white);
-        }
-        p {
-          color: var(--white);
-        }
+  padding: 90px 0 55px;
 
-        svg {
-          path, rect, circle {
-            stroke: var(--white);
-          }
+  &__block {
+    gap: 30px;
+  }
+
+  &__background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(30.61deg, #009A6D 11.75%, #00B883 87.08%);
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+  }
+
+  &__box {
+    display: flex;
+    position: relative;
+    width: calc((100% / 4) - (30px * 3) / 4);
+    flex-direction: column;
+    border: 1px solid var(--gray-e1);
+    border-radius: 4px;
+    padding: 16px 16px 18px;
+    box-sizing: border-box;
+    height: auto;
+    transition: border-color .3s ease-in-out, height .3s ease-in-out;
+    &-wrap {
+      z-index: 1;
+    }
+    &:hover {
+      border-color: var(--green);
+      .after-hero__background {
+        opacity: 1;
+      }
+      h3 {
+        color: var(--white);
+      }
+      p {
+        color: var(--white);
+      }
+
+      svg {
+        path, rect, circle {
+          stroke: var(--white);
         }
       }
     }
@@ -35,7 +54,7 @@
   &__top {
     display: flex;
     flex-direction: column;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
 
   &__title {
@@ -46,10 +65,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: 50px;
-    margin-bottom: 28px;
+    height: 40px;
 
     svg  {
+      height: 40px;
       path, circle, rect {
         transition: stroke .3s ease-in-out;
       }
@@ -57,6 +76,7 @@
   }
 
   &__title {
+    margin-bottom: 8px;
     transition: color .3s ease-in-out;
   }
 
@@ -64,13 +84,66 @@
     transition: color .3s ease-in-out;
   }
 
-  &__swiper-pagination {
-    @include pagination;
+  &__more {
+    display: none
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .after-hero {
+    &__box {
+      width: calc((100% / 3) - (30px * 2) / 3);
+    }
+
+    &__more {
+      margin-top: 40px;
+      display: block;
+      text-align: center;
+    }
+
+    &__btn {
+      text-transform: uppercase;
+      font-size: var(--text-size-12);
+      line-height: var(--text-height-135);
+      color: var(--black);
+      padding-bottom: 2px;
+      border-bottom: 1px solid var(--gray-secondary);
+    }
   }
 }
 
 @media screen and (max-width: 767px) {
   .after-hero {
-    padding: 20px 0 35px;
+    padding: 30px 0 30px;
+
+    &__block {
+      gap: var(--gap-16);
+    }
+
+    &__box {
+      width: calc((100% / 2) - (30px) / 2);
+    }
+  }
+}
+
+@media screen and (max-width: 575px){
+  .after-hero {
+    &__box {
+      width: 100%;
+      padding: 20px;
+      &-wrap {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-20);
+      }
+    }
+
+    &__top {
+      margin-bottom: 0;
+    }
+
+    &__title {
+      margin-bottom: 5px;
+    }
   }
 }

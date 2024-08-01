@@ -1,4 +1,27 @@
-@include font-face("Din Condensed", "../fonts/dincondensed-regular", 400, normal);
-@include font-face("Neo Sans Cyr", "../fonts/neosanscyr-regular", 400, normal);
-@include font-face("Neo Sans Cyr Medium", "../fonts/neosanscyr_medium", 400, normal);
+@font-face {
+  font-family: "Sofia Sans Condensed";
+  src: url("../fonts/SofiaSansCondensed-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "Sofia Sans Condensed";
+  src: url("../fonts/SofiaSansCondensed-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Sans";
+  src: url("../fonts/SofiaSans-Light.woff") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Sans";
+  src: url("..fonts/SofiaSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}

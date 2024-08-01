@@ -99,7 +99,7 @@
   }
 
   &__pagination {
-    @include pagination;
+    //@include pagination;
     display: none;
   }
 }

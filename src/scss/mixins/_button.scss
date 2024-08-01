@@ -1,19 +1,20 @@
 @mixin btn {
-  background-color: var(--green);
-  color: var(--white);
+  background-color: transparent;
+  color: var(--black);
   font-size: var(--text-size-16);
   line-height: var(--text-height-135);
-  font-family: var(--text-din);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 10px 11px;
+  padding: 9px 10px 8px;
   text-transform: uppercase;
-  transition: color .3s ease-in-out, background-color .3s ease-in-out;
-
+  transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+  border-radius: 4px;
+  border: 1px solid var(--green);
   &:hover {
-    background-color: var(--gray-secondary);
-    color: var(--black);
+    background-color: var(--green);
+    color: var(--white);
+    border-color: var(--green)
   }
 }
 
