@@ -9,6 +9,10 @@
   z-index: 3;
   transition: box-shadow .3s ease-in-out;
 
+  &__shadow {
+    box-shadow: 0px 4px 30px 0px #27272712;
+  }
+
   &__nav {
     &-list {
       gap: var(--gap-40);

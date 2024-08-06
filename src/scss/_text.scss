@@ -14,10 +14,10 @@
 }
 
 .text-h3 {
-  font-size: var(--text-size-16);
+  font-size: var(--text-size-13);
   line-height: var(--text-height-125);
   font-family: var(--text-sofia-condensed);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .text-h3-all {
@@ -48,17 +48,17 @@
 }
 
 .text-h7 {
-  font-size: var(--text-size-20);
+  font-size: var(--text-size-16);
   line-height: var(--text-height-135);
   font-family: var(--text-sofia-condensed);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .text-h8 {
-  font-size: var(--text-size-40);
-  line-height: var(--text-height-120);
+  font-size: 3.2rem;
+  line-height: var(--text-height-110);
   font-family: var(--text-sofia-condensed);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .text-h9 {
@@ -69,8 +69,8 @@
 }
 
 .text-h9-all {
-  font-size: var(--text-size-18);
-  line-height: var(--text-height-135);
+  font-size: var(--text-size-16);
+  line-height: var(--text-height-130);
   font-family: var(--text-sofia-condensed);
   font-weight: 600;
 }
@@ -146,11 +146,16 @@
   font-weight: var(--text-semibold);
 }
 
+.descr8 {
+  font-size: var(--text-size-14);
+  line-height: var(--text-height-145);
+
+}
+
 .text-button {
-  font-size: var(--text-size-16);
+  font-size: var(--text-size-14);
   line-height: var(--text-height-135);
-  font-family: var(--text-sofia-condensed);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .text-number {
@@ -198,7 +203,7 @@
   }
 
   .text-h8 {
-    font-size: var(--text-size-24);
+    font-size: 2.6rem;
   }
 
   .text-h8-2 {

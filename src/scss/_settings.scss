@@ -229,3 +229,43 @@ p {
     bottom: 100px;
   }
 }
+
+.pages-header {
+  margin-bottom: var(--gap-40);
+}
+
+.pages-links {
+  margin-bottom: 50px;
+
+  &-list {
+    gap: 20px;
+    column-gap: 24px;
+    row-gap: 20px;
+  }
+
+  &-link {
+    font-size: var(--text-size-14);
+    line-height: var(--text-height-120);
+    text-transform: uppercase;
+    opacity: 70%;
+    @include hoverUnderling(var(--green))
+  }
+
+  &-link.active {
+    border-color: var(--green);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .pages-header {
+    margin-bottom: 32px;
+  }
+
+  .pages-links {
+    margin-bottom: 16px;
+    &-list {
+      column-gap: 20px;
+      row-gap: 17px;
+    }
+  }
+}

@@ -8,30 +8,7 @@
     @include('partials/header.html')
   </header>
   <main class="main">
-    <section class="qp">
-      <div class="custom-container container-fluid">
-        <div class="qp_content">
-          <nav class="breadcrumb-custom qp__breadcrumb">
-            <ul class="breadcrumb-custom-list list-reset">
-              <li class="breadcrumb-custom-item">
-                <a href="/" class="breadcrumb-custom-link">Главная</a>
-              </li>
-              <li class="breadcrumb-custom-item">
-                Доверенная операционная система QP&nbsp;ОС
-              </li>
-            </ul>
-          </nav>
-          <div class="qp__block d-flex flex-wrap">
-            <div class="qp__left col-12 col-lg-8">
-              @include('partials/qp/left.html')
-            </div>
-            <div class="qp__right d-none d-lg-block col-lg-4">
-              @include('partials/qp/right.html')
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    @include('partials/qp/qp.html')
   </main>
   <div class="modal fade js-submit-modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered qp__modal-dialog">

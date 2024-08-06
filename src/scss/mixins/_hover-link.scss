@@ -5,6 +5,15 @@
   }
 }
 
+@mixin hoverUnderling($color) {
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s ease-in-out;
+
+  &:hover {
+    border-color: $color;
+  }
+}
+
 @mixin hoverSocial($borderColor, $borderColorHover) {
   border: 1px solid $borderColor;
   display: flex;

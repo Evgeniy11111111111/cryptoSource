@@ -144,27 +144,12 @@ if (document.getElementById("index")) {
   })
 }
 
-function afterHeroMore (count, btn, items) {
-  if (items.length > count) {
-    items.forEach((item, index) => {
-      if (index > count) {
-        item.classList.add("d-none")
-      }
-    })
-
-    btn.addEventListener("click", () => {
-      items.forEach((item, index) => {
-        item.classList.remove("d-none");
-      })
-      btn.classList.add("d-none")
-    })
-  }
-}
-
-if (document.getElementById("about")) {
-  const tabButtons = Array.from(document.querySelectorAll(".about__tab-head-btn"));
-  const elements = Array.from(document.querySelectorAll(".about__tab-item"));
-  const accordionItems = document.querySelectorAll('.events__accordion-item-head');
+if (document.getElementById("work")) {
+  const tabButtons = Array.from(document.querySelectorAll(".work__tab-head-btn"));
+  const elements = Array.from(document.querySelectorAll(".work__tab-item"));
+  const accordionItems = document.querySelectorAll('.vacancies__accordion-item-head');
+  const form = document.querySelector('.internship__form-js')
+  const myModalOk = new bootstrap.Modal(document.querySelector(".js-modal-ok"));
   tabActive(tabButtons[0], 0, tabButtons, elements)
 
   tabButtons.forEach((btn, index) => {
@@ -180,29 +165,167 @@ if (document.getElementById("about")) {
     })
   })
 
-  var swiperHistory = new Swiper('.history__swiper', {
+  let swiperLive = new Swiper(".live__swiper", {
     slidesPerView: 1,
-    spaceBetween: 10,
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      }
-    },
+    spaceBetween: 30,
     pagination: {
-      el: ".history__pagination",
+      el: ".live__pagination",
       clickable: true
     },
     navigation: {
-      nextEl: ".history__swiper-next",
-      prevEl: ".history__swiper-prev"
+      nextEl: ".live__swiper-next",
+      prevEl: ".live__swiper-prev"
     },
   })
 
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    myModalOk.show();
+  })
+}
+
+if (document.getElementById("qp")) {
+  const modal = document.querySelector(".js-submit-modal");
+  const btns = document.querySelectorAll(".qp__button");
+  const myModal = new bootstrap.Modal(modal);
+  const form = document.querySelector(".qp__modal-form")
+  const myModalOk = new bootstrap.Modal(document.querySelector(".js-modal-ok"));
+
+  btns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      myModal.show();
+    })
+  })
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    myModal.hide();
+    myModalOk.show();
+  })
+
+  if (document.querySelectorAll(".qp__swiper")) {
+    document.querySelectorAll(".qp__swiper").forEach(elem => {
+      let swiperQP = new Swiper(".qp__swiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+          el: ".qp__pagination",
+          clickable: true
+        },
+        navigation: {
+          nextEl: ".qp__swiper-next",
+          prevEl: ".qp__swiper-prev"
+        },
+      })
+    })
+  }
+
+
+  if (document.querySelectorAll('.qp__swiper-slide') && document.querySelectorAll('.qp__swiper-slide').length < 2) {
+    document.querySelectorAll(".qp__swiper-navigation").forEach(elem => {
+      elem.classList.add('d-none')
+    })
+  }
+
+}
+
+if (document.getElementById("history")) {
+  const block = document.querySelector(".history__block");
+  const historyStrip = document.querySelector(".history__strip")
+  const historyTimeline = document.querySelectorAll(".history__timeline")
+  const more = document.querySelector(".history__more")
+  const btnMore = document.querySelector(".history__more-btn")
+
+  if (historyTimeline.length < 5) {
+    more.classList.add("d-none")
+    block.style.maxHeight = "none"
+    if (window.innerWidth < 768) {
+      bottomAbsolute(historyTimeline, historyStrip, 18)
+    } else {
+      bottomAbsolute(historyTimeline, historyStrip, 40)
+    }
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 768) {
+        bottomAbsolute(historyTimeline, historyStrip, 18)
+      } else {
+        bottomAbsolute(historyTimeline, historyStrip, 40)
+      }
+    })
+
+  } else {
+    function heightBlockForWindow () {
+      if (window.innerWidth < 768) {
+        heightBlock(block, historyTimeline, 4, 58)
+      } else {
+        heightBlock(block, historyTimeline, 4, 80)
+      }
+    }
+
+    heightBlockForWindow()
+
+    more.classList.remove("d-none")
+    window.addEventListener("resize", () => heightBlockForWindow)
+
+    btnMore.addEventListener("click", () => {
+      window.removeEventListener("resize", () => heightBlockForWindow)
+      more.classList.add("d-none")
+      block.style.maxHeight = "none"
+      if (window.innerWidth < 768) {
+        bottomAbsolute(historyTimeline, historyStrip, 18)
+      } else {
+        bottomAbsolute(historyTimeline, historyStrip, 40)
+      }
+      window.addEventListener("resize", () => {
+        if (window.innerWidth < 768) {
+          bottomAbsolute(historyTimeline, historyStrip, 18)
+        } else {
+          bottomAbsolute(historyTimeline, historyStrip, 40)
+        }
+      })
+    })
+  }
+
+  if (window.innerWidth < 768) {
+
+  }
+
+}
+
+if (document.getElementById("licenses")) {
+  const checkbox = document.querySelectorAll(".licenses__filter-input")
+  const checkedAll = document.querySelector(".licenses__filter-btn-all")
+  const checkedReset = document.querySelector(".licenses__filter-btn-reset")
+
+  const areAllChecked = () => {
+    return Array.from(checkbox).every(elem => elem.checked)
+  }
+
+  const areCheckedOne = () => {
+    return Array.from(checkbox).some(elem => elem.checked)
+  }
+
+  checkedAll.addEventListener("click", () => {
+    checkbox.forEach(elem => elem.checked = true)
+    checkedReset.disabled = false
+    checkedAll.disabled = true
+  })
+
+  checkedReset.addEventListener("click", () => {
+    checkbox.forEach(elem => elem.checked = false)
+    checkedReset.disabled = true
+    checkedAll.disabled = false
+  })
+
+  checkbox.forEach(elem => {
+    elem.addEventListener("change", () => {
+      checkedAll.disabled = areAllChecked()
+      checkedReset.disabled = !areCheckedOne()
+    })
+  })
+}
+
+if (document.getElementById("contacts")) {
   function initMapContacts() {
     var myMap = new ymaps.Map("contacts__map-penza", {
       center: [53.184451071233134,45.007014999999924],
@@ -281,18 +404,8 @@ if (document.getElementById("about")) {
   ymaps.ready(initMapContactsMoscow)
 }
 
-if (document.getElementById("work")) {
-  const tabButtons = Array.from(document.querySelectorAll(".work__tab-head-btn"));
-  const elements = Array.from(document.querySelectorAll(".work__tab-item"));
-  const accordionItems = document.querySelectorAll('.vacancies__accordion-item-head');
-  const form = document.querySelector('.internship__form-js')
-  const myModalOk = new bootstrap.Modal(document.querySelector(".js-modal-ok"));
-  tabActive(tabButtons[0], 0, tabButtons, elements)
-
-  tabButtons.forEach((btn, index) => {
-    btn.addEventListener("click", () => {tabActive(btn, index,tabButtons, elements)})
-  })
-
+if (document.getElementById("events")) {
+  const accordionItems = document.querySelectorAll('.events__accordion-item-head');
   accordionItems.forEach(elem => {
     elem.addEventListener("click", () => {
       elem.parentElement.classList.contains("is-show") ? accordionNotActive(elem) : accordionActive(elem)
@@ -301,125 +414,25 @@ if (document.getElementById("work")) {
       })
     })
   })
-
-  let swiperLive = new Swiper(".live__swiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    pagination: {
-      el: ".live__pagination",
-      clickable: true
-    },
-    navigation: {
-      nextEl: ".live__swiper-next",
-      prevEl: ".live__swiper-prev"
-    },
-  })
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    myModalOk.show();
-  })
 }
 
-if (document.getElementById("qp")) {
-  const modal = document.querySelector(".js-submit-modal");
-  const btns = document.querySelectorAll(".qp__button");
-  const myModal = new bootstrap.Modal(modal);
-  const form = document.querySelector(".qp__modal-form")
-  const myModalOk = new bootstrap.Modal(document.querySelector(".js-modal-ok"));
-
-  btns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      myModal.show();
-    })
-  })
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    myModal.hide();
-    myModalOk.show();
-  })
-
-  if (document.querySelectorAll(".qp__example-swiper")) {
-    document.querySelectorAll(".qp__example-swiper").forEach(elem => {
-      let swiperQP = new Swiper(".qp__example-swiper", {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        pagination: {
-          el: ".qp__example-pagination",
-          clickable: true
-        },
-        navigation: {
-          nextEl: ".qp__swiper-next",
-          prevEl: ".qp__swiper-prev"
-        },
-      })
-    })
+function heightBlock (block, items, count, gap) {
+  let height = 0
+  for (let i = 0; i < count; i++) {
+    height += items[i].getBoundingClientRect().height
   }
 
-
-  if (document.querySelectorAll('.qp__example-slide') && document.querySelectorAll('.qp__example-slide').length < 2) {
-    document.querySelectorAll(".qp__swiper-btn").forEach(elem => {
-      elem.classList.add('d-none')
-    })
-  }
-
-  new Accordion(".qp__accordion")
-
-  if (document.querySelector(".qp__accordion-second")) {
-    document.querySelectorAll(".qp__accordion-second").forEach(elem => {
-      new Accordion(elem)
-    })
-  }
-
-
+  block.style.maxHeight = (height + (gap * (count - 1))) + "px";
 }
 
-if (document.getElementById("quantum")) {
-  let swiperQuantum = new Swiper(".quantum__swiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    pagination: {
-      el: ".quantum__pagination",
-      clickable: true
-    },
-    navigation: {
-      nextEl: ".quantum__swiper-next",
-      prevEl: ".quantum__swiper-prev"
-    },
-  })
+function bottomAbsolute(timelines, block, gap) {
 
-  let swiperZoom = new Swiper(".quantum__characteristics-swiper", {
-    zoom: true
-  })
+  if (timelines) {
+    const lastTimeline = timelines[timelines.length - 1].offsetHeight
 
-  const modal = document.querySelector(".js-submit-modal");
-  const btns = document.querySelectorAll(".quantum__button");
-  const myModal = new bootstrap.Modal(modal);
-  const form = document.querySelector(".quantum__modal-form")
-  const myModalOk = new bootstrap.Modal(document.querySelector(".js-modal-ok"));
-  const accordionItems = document.querySelectorAll('.quantum__accordion-item-head')
+    block.style.bottom = `${lastTimeline - gap}px`
+  }
 
-  btns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      myModal.show();
-    })
-  })
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    myModal.hide();
-    myModalOk.show();
-  })
-
-  accordionItems.forEach(elem => {
-    elem.addEventListener("click", () => {
-      elem.parentElement.classList.contains("is-show") ? accordionNotActive(elem) : accordionActive(elem)
-      accordionItems.forEach(el => {
-        if (el.parentElement !== elem.parentElement) accordionNotActive(el)
-      })
-    })
-  })
 }
 
 function tabActive(btn, index, btns, elements) {
@@ -464,6 +477,22 @@ function resizeForHeroLeft (block) {
   }
 }
 
+function afterHeroMore (count, btn, items) {
+  if (items.length > count) {
+    items.forEach((item, index) => {
+      if (index > count) {
+        item.classList.add("d-none")
+      }
+    })
+
+    btn.addEventListener("click", () => {
+      items.forEach((item, index) => {
+        item.classList.remove("d-none");
+      })
+      btn.classList.add("d-none")
+    })
+  }
+}
 
 function initMap() {
   var myMap = new ymaps.Map("js-map-penza", {

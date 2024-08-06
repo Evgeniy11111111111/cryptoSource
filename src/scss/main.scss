@@ -17,11 +17,6 @@
 @import "./components/main/about";
 @import "./components/main/facts";
 @import "./components/main/customers";
-@import "./components/about/about";
-@import "./components/about/licenses";
-@import "./components/about/history";
-@import "./components/about/events";
-@import "./components/about/contacts";
 @import "./components/work/work";
 @import "./components/work/vacancies";
 @import "./components/work/internship";
@@ -29,7 +24,10 @@
 @import "./components/news/news";
 @import "./components/detail-news/detail-news";
 @import "./components/qp/qp";
-@import "./components/protection/protection";
-@import "./components/quantum/quantum";
 @import "./components/map/map";
 @import "./components/error/error";
+@import "./components/activity/activity";
+@import "./components/history/history";
+@import "./components/licenses/licenses";
+@import "./components/contacts/contacts";
+@import "./components/events/events";

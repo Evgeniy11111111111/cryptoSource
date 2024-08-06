@@ -1,5 +1,5 @@
 .customers {
-  padding: 70px 0 140px;
+  padding: 55px 0 110px;
 
   &__title {
     margin-bottom: var(--gap-20);
@@ -11,20 +11,11 @@
 
   &__swiper {
     margin-right: 1px;
+    margin-bottom: var(--gap-30);
     &-btn {
-      @include switching;
-      position: absolute;
-      top: 44.5px;
-      z-index: 2;
+      @include btnArray(var(--green), var(--white));
     }
 
-    &-prev {
-      left: calc(0% - 25px);
-    }
-
-    &-next {
-      right: calc(0% - 25px);
-    }
   }
 
   &__slide {
@@ -33,6 +24,7 @@
     justify-content: space-between;
 
     &-img {
+      border-radius: 4px;
       height: 139px;
       border: .5px solid var(--black);
       padding: var(--gap-20);
@@ -44,13 +36,20 @@
     }
 
     &-text {
+      text-align: center;
       text-transform: uppercase;
     }
   }
 
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__pagination {
-    //@include pagination;
-    display: none;
+    @include pagination(512px, var(--green));
+    padding: 0 50px;
   }
 }
 
@@ -64,8 +63,8 @@
       }
     }
 
-    &__pagination {
-      display: flex;
+    &__navigation {
+      justify-content: center;
     }
   }
 }

@@ -1,0 +1,127 @@
+.history {
+  padding: 80px 0 120px;
+
+  &__content {
+    padding: 60px 0 0;
+  }
+
+  &__block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    overflow: hidden;
+  }
+
+  &__strip {
+    width: 1px;
+    position: absolute;
+    background-color: var(--green);
+    top: 50px;
+    left: 358px;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__timeline {
+    display: flex;
+    position: relative;
+    gap: 90px;
+    &-left {
+      max-width: 328px;
+      width: 100%;
+      border-radius: 4px;
+      flex: 0 0 auto;
+    }
+
+    &-img {
+      background-color: var(--gray-secondary);
+      border-radius: 4px;
+      height: 185px;
+    }
+
+    &-marker {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #009a6d67;
+      position: absolute;
+      top: 40px;
+      left: 348px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:before {
+        content: "";
+        display: block;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-color: var(--green);
+      }
+    }
+
+    &__right {
+      margin-top: 12px;
+    }
+
+    &-title {
+      font-size: 8rem;
+      margin-bottom: 10px;
+      color: var(--green);
+      font-family: var(--text-sofia-condensed);
+      text-transform: uppercase;
+      font-weight: var(--text-bold);
+      line-height: var(--text-height-100);
+    }
+  }
+
+  &__more {
+    text-align: center;
+    margin-top: 40px;
+
+    &-btn {
+      text-transform: uppercase;
+      font-family: var(--text-sofia-condensed);
+      font-size: var(--text-size-12);
+      line-height: var(--text-height-135);
+      padding-bottom: 2px;
+      border-bottom: 1px solid var(--gray-secondary);
+    }
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  .history {
+    &__strip {
+      left: 9.5px;
+      top: 18px;
+    }
+
+    &__block {
+      gap: 58px;
+    }
+
+    &__timeline {
+      padding-left: 40px;
+      &-left {
+        display: none;
+      }
+
+      &-marker {
+        left: 0;
+        top: 9px;
+      }
+
+      &-right {
+        margin-top: 0;
+      }
+
+      &-title {
+        font-size: 4rem;
+      }
+    }
+  }
+
+}

@@ -1,134 +1,274 @@
 .qp {
   margin-top: 83px;
-  padding: 10px 0 140px;
 
-  &__breadcrumb {
-    margin-bottom: var(--gap-30);
+  &__hero {
+    position: relative;
+    min-height: 596px;
+    width: 100%;
+    background-color: var(--blue);
+    display: flex;
+    align-items: center;
+
+    &_img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &-descr {
+      padding: 30px 0;
+      max-width: 490px;
+      width: 100%;
+    }
   }
 
-  &__left {
-    padding-right: 10px;
+  &__content {
+    padding: 60px 0 120px;
 
-    &-send {
-      margin-bottom: 70px;
+    p {
+      font-size: var(--text-size-13);
+      line-height: var(--text-height-140);
+      font-weight: var(--text-regular);
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
     }
+
+    h3 {
+      font-family: var(--text-sofia-condensed);
+      font-weight: 700;
+      font-size: var(--text-size-36);
+      line-height: var(--text-height-100);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h4 {
+      font-family: var(--text-sofia-condensed);
+      font-weight: 700;
+      font-size: 24px;
+      line-height: var(--text-height-110);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__block {
+    row-gap: 60px;
   }
 
   &__title {
-    margin-bottom: var(--gap-30);
-    &-second {
-      margin-bottom: var(--gap-20);
-    }
-    &-three {
-      margin-bottom: var(--gap-20);
-    }
+    margin-bottom: 20px;
+    color: var(--white);
   }
 
-  &__descr {
-    max-width: 712px;
-    width: 100%;
-    margin-bottom: 70px;
-    p:not(:last-child) {
+  &__text {
+    color: var(--white);
+  }
+
+  &__left {
+    padding-right: 15px;
+    &-title {
+      gap: 40px;
+      max-width: 646px;
+      width: 100%;
       margin-bottom: 20px;
+
+      &-text {
+        line-height: var(--text-height-110);
+      }
+    }
+
+    &-descr {
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
+    }
+
+    &-advantages {
+      margin-bottom: 90px;
+      &-list {
+        gap: 12px;
+      }
+
+      &-item {
+        padding: 16px 20px;
+        border-radius: 6px;
+        background-color: var(--gray-f5);
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        line-height: var(--text-height-135);
+      }
+
+      &-svg {
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        background-color: var(--blue);
+        margin-right: 20px;
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+
+
+    }
+
+    &-props {
+      gap: 30px;
+      margin-bottom: 40px;
+
+      &-item {
+        width: calc(100% / 2 - 15px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        ul {
+          padding: 20px;
+          background-color: var(--gray-f5);
+          border-radius: 6px;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          gap: 16px;
+        }
+
+        li {
+          font-size: var(--text-size-13);
+          line-height: var(--text-height-140);
+          font-weight: var(--text-regular);
+          position: relative;
+          padding-left: 22px;
+          span {
+            position: absolute;
+            width: 5px;
+            height: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 0;
+            top: 5.5px;
+          }
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      background-color: var(--gray);
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
     }
   }
 
-  &__item {
-    position: relative;
-    padding-left: 22px;
-    &:before {
-      content: "";
-      display: block;
-      width: 10px;
-      height: 10px;
-      background-color: var(--green);
-      position: absolute;
-      left: 0;
-      top: 6.5px;
-    }
-  }
-
-  &__advantages {
-    margin-bottom: 70px;
-    gap: 30px;
-    &-list {
-      gap: var(--gap-12);
-
-    }
-  }
-
-  &__roles {
-    &-img {
-      max-width: 711px;
-      margin-bottom: var(--gap-20);
-    }
-
-    &-list {
-      gap: var(--gap-12);
-    }
-  }
-
-  &__example {
-    &-block {
-      position: relative;
-      max-width: 711px;
-      margin-bottom: var(--gap-30);
-    }
-    &-pagination {
-      //@include pagination;
-      display: none;
-    }
-
-  }
 
   &__swiper {
-    &-btn {
-      @include switching;
-      position: absolute;
-      top: calc(50% - 25px);
-      z-index: 1;
+    &-wrap {
+      position: relative;
+    }
+    &-slide {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      &-top {
+        height: 384px;
+
+        img {
+          max-width: 100%;
+          object-fit: contain;
+          max-height: 384px;
+          height: 100%;
+        }
+      }
+      &-bottom {
+        text-align: center;
+        font-size: var(--text-size-13);
+        line-height: var(--text-height-140);
+        font-weight: var(--text-regular);
+      }
     }
 
-    &-prev {
-      left: calc(0% - 25px);
+    &-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 404px;
+      z-index: 2;
     }
-    &-next {
-      right: calc(0% - 25px);
+
+    &-btn {
+      @include btnArray(var(--blue), var(--white));
     }
+  }
+
+  &__pagination {
+    @include pagination(414px, var(--blue));
+    padding: 0 50px;
   }
 
   &__right {
-    padding-left: 20px;
+    padding-left: 15px;
 
     &-block {
       position: sticky;
       top: 83px;
     }
     &-list {
-      background-color: var(--gray-light);
-      padding: var(--gap-30);
-      gap: var(--gap-12);
-      margin-bottom: var(--gap-40);
+      gap: var(--gap-16);
+      margin-bottom: 60px;
     }
 
     &-item {
-      color: var(--green);
+      font-size: var(--text-size-12);
+      line-height: var(--text-height-135);
       text-transform: uppercase;
+      opacity: 70%;
     }
 
     &-link {
-      color: var(--black);
-      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s ease-in-out;
+      &:hover {
+        border-color: var(--blue);
+      }
     }
 
+    &-link.activity {
+      border-color: var(--blue);
+    }
+
+
     &-title {
-      margin-bottom: var(--gap-30);
+      margin-bottom: var(--gap-20);
     }
 
   }
   &__button {
     width: 100%;
-    @include btnBorder;
+    @include btn();
+    background-color: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+    &:hover {
+      border-color: var(--blue);
+      background-color: var(--white);
+      color: var(--blue);
+    }
   }
 
   &__modal {
@@ -206,65 +346,114 @@
     }
   }
 
-  &__accordion {
-    @include ac-multi;
-    &-second {
-      padding: 0 0 0 10px;
-    }
-
-    &-list {
-      padding-top: 20px;
-    }
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .qp {
-    &__left {
-      padding-right: 0;
-    }
-
-    &__descr {
-      max-width: none;
-    }
-
-    &__roles {
-      &-img {
-        max-width: none;
-      }
-    }
-
-    &__example {
-      &-block {
-        max-width: none;
-      }
-    }
-  }
 }
 
 @media screen and (max-width: 767px) {
   .qp {
-    margin-top: 48px;
-    padding: 5px 0 70px;
+    margin-top: 80px;
 
-    &__breadcrumb {
-      margin-bottom: var(--gap-20);
-    }
+    &__content {
+      padding: 45px 0 60px;
 
-    &__title {
-      margin-bottom: var(--gap-20);
-    }
-
-    &__example {
-      &-pagination {
-        display: flex;
+      h3 {
+        font-size: 2.6rem;
+        margin-bottom: 16px;
       }
+    }
+
+    &__hero {
+      min-height: 525px;
+      align-items: start;
+
+      &-descr {
+        padding: 24px 0;
+        max-width: none;
+        width: 93.05%;
+      }
+    }
+
+    &__left {
+      padding-right: 0;
+      &-title {
+        max-width: 516px;
+        gap: 20px;
+        &-svg svg {
+          width: 130px;
+          height: 48px;
+        }
+        &-text {
+          font-size: 2.6rem;
+        }
+      }
+
+      &-advantages {
+        margin-bottom: 40px;
+
+        &-list {
+          gap: 10px;
+        }
+
+        &-item {
+          padding: 10px 16px;
+          border-radius: 4px;
+          font-size: .9rem;
+          &-svg {
+            width: 26px;
+            height: 26px;
+            margin-right: 12px;
+            svg {
+              width: 26px;
+              height: 26px;
+            }
+          }
+        }
+      }
+
+      &-props {
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+        &-item {
+          width: 100%;
+        }
+      }
+
+    }
+
+    &__right {
+      padding-left: 0;
     }
 
     &__swiper {
-      &-btn {
-        display: none;
+      &-slide {
+        gap: 12px;
+        &-top {
+          height: 250px;
+          img {
+            max-height: 250px;
+          }
+        }
       }
+
+      &-btn {
+        background-color: var(--white);
+      }
+
+      &-navigation {
+        left: 6px;
+        right: 6px;
+        top: 112px;
+      }
+    }
+
+    &__pagination {
+      display: none;
+    }
+
+    &__title {
+      font-size: 3rem;
+      line-height: var(--text-height-120);
+      margin-bottom: var(--gap-20);
     }
 
     &__modal {
@@ -311,6 +500,20 @@
 
 @media screen and (max-width: 540px) {
   .qp {
+
+    &__swiper {
+      &-top {
+        height: 184px;
+        img {
+          max-height: 184px;
+        }
+      }
+    }
+
+    &__navigation {
+      top: 68px;
+    }
+
     &__modal {
       &-dialog {
         margin: var(--gap-20);
