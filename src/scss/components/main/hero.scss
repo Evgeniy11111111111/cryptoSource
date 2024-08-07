@@ -1,6 +1,5 @@
 .hero {
   margin-top: 83px;
-  background-color: var(--green);
   position: relative;
 
   &__content {
@@ -66,6 +65,11 @@
       padding: 0 var(--container-offset) 0 33px;
     }
 
+    &-content {
+      display: flex;
+      flex-direction: column;
+    }
+
     &-slide {
       height: auto;
       display: flex;
@@ -89,6 +93,10 @@
       }
     }
 
+    &-top {
+      margin-bottom: 24px;
+    }
+
 
   }
 
@@ -109,8 +117,13 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(317.99deg, rgba(0, 185, 130, 0.03) 73.57%, rgba(0, 83, 58, 0.21) 91.33%);
+      background: linear-gradient(219.76deg, rgba(0, 154, 109, 0) 27.48%, rgba(0, 154, 109, 0.8) 80.85%);
+    ;
       z-index: 1;
+
+      &-blue {
+        background: linear-gradient(238.03deg, rgba(77, 167, 191, 0) 16.17%, #306B81 83.09%);
+      }
     }
   }
 
@@ -321,9 +334,6 @@
 
     &__descr {
       max-width: none;
-      &-right {
-        margin-bottom: 20px;
-      }
     }
 
     &__link {

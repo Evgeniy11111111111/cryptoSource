@@ -62,6 +62,13 @@ if (window.scrollY > window.innerHeight) {
   btnUp.classList.add('is-hidden')
 }
 
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 767 && menu.classList.contains("active")) {
+    burger.classList.remove('active')
+    menu.classList.remove('active')
+  }
+})
+
 btnUp.addEventListener('click', () => {
   window.scrollTo({
     top: 0,

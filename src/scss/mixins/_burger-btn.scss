@@ -1,6 +1,6 @@
 @mixin burgerBtn {
-  width: 38px;
-  height: 38px;
+  width: 37px;
+  height: 37px;
   padding: 11px 8px;
   display: flex;
   border: 1px solid var(--green);
@@ -22,7 +22,7 @@
 
 @mixin activeBurger {
   span:nth-child(1) {
-    transform: translate(0px, 6px) rotate(45deg);
+    transform: translate(0px, 5px) rotate(45deg);
   }
   span:nth-child(2) {
     transform: scale(0);

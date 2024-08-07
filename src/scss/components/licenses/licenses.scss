@@ -222,11 +222,18 @@
       }
     }
 
+    &__list {
+      &-title {
+        font-size: var(--text-size-20);
+      }
+    }
+
     &__item {
       flex-direction: column;
       align-items: start;
 
       &-name {
+        font-size: var(--text-size-18);
         width: 84%;
       }
     }

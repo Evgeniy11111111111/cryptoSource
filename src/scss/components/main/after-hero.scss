@@ -78,6 +78,8 @@
   &__title {
     margin-bottom: 8px;
     transition: color .3s ease-in-out;
+    font-size: var(--text-size-16);
+    line-height: var(--text-height-135);
   }
 
   &__descr {

@@ -359,6 +359,10 @@
         font-size: 2.6rem;
         margin-bottom: 16px;
       }
+
+      h4 {
+        font-size: var(--text-size-18);
+      }
     }
 
     &__hero {
@@ -432,6 +436,10 @@
           img {
             max-height: 250px;
           }
+        }
+
+        &-bottom {
+          font-size: var(--text-size-12);
         }
       }
 
