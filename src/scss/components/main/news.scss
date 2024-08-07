@@ -46,6 +46,7 @@
     }
 
     &-title {
+      color: var(--black);
       margin-bottom: 8px;
       text-transform: uppercase;
       display: -webkit-box;
@@ -57,6 +58,7 @@
     &-text {
       font-size: var(--text-size-14);
       line-height: var(--text-height-145);
+      color: var(--black);
       opacity: 70%;
       overflow: hidden;
       margin-bottom: 10px;
