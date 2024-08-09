@@ -82,14 +82,14 @@
         z-index: 1;
         left: 33px;
         right: var(--container-offset);
-        padding: 9px 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
 
       &-pagination {
-        @include pagination(none, var(--white));
+        @include pagination(300px, var(--white));
+        padding: 0 40px;
       }
     }
 
@@ -230,6 +230,8 @@
 
   .hero__right-swiper-navigation {
     left: 30px;
+    max-width: 560px;
+    width: 100%;
     right: var(--container-offset-laptop);
   }
 }
@@ -247,6 +249,7 @@
     &-swiper {
       &-pagination {
         max-width: 400px;
+        padding: 0;
       }
     }
   }
