@@ -102,18 +102,18 @@ if (document.getElementById("index")) {
   const items = document.querySelectorAll(".after-hero__box")
   const btn = document.querySelector(".after-hero__btn")
   console.log(window.innerWidth)
-  if (window.innerWidth < 768) {
+  if (window.innerWidth < 827) {
     afterHeroMore(3, btn, items)
-  } else if (window.innerWidth < 991) {
+  } else if (window.innerWidth < 1140) {
     afterHeroMore(5, btn, items)
   }
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 827) {
       if (!btn.classList.contains("d-none")) {
         afterHeroMore(3, btn, items)
       }
-    } else if (window.innerWidth < 991) {
+    } else if (window.innerWidth < 1140) {
       if (!btn.classList.contains("d-none")) {
         afterHeroMore(5, btn, items)
       }

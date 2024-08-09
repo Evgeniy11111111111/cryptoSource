@@ -19,7 +19,7 @@
 
     &-descr {
       padding: 30px 0;
-      max-width: 490px;
+      max-width: 600px;
       width: 100%;
     }
   }
@@ -28,7 +28,7 @@
     padding: 60px 0 120px;
 
     p {
-      font-size: var(--text-size-13);
+      font-size: var(--text-size-16);
       line-height: var(--text-height-140);
       font-weight: var(--text-regular);
 
@@ -40,7 +40,7 @@
     h3 {
       font-family: var(--text-sofia-condensed);
       font-weight: 700;
-      font-size: var(--text-size-36);
+      font-size: var(--text-size-35);
       line-height: var(--text-height-100);
       text-transform: uppercase;
       margin-bottom: 20px;
@@ -49,7 +49,7 @@
     h4 {
       font-family: var(--text-sofia-condensed);
       font-weight: 700;
-      font-size: 24px;
+      font-size: 26px;
       line-height: var(--text-height-110);
       text-transform: uppercase;
       margin-bottom: 16px;
@@ -101,7 +101,7 @@
         display: flex;
         align-items: center;
         text-transform: uppercase;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         line-height: var(--text-height-135);
       }
 
@@ -122,6 +122,7 @@
     }
 
     &-props {
+      display: flex;
       gap: 30px;
       margin-bottom: 40px;
 
@@ -130,6 +131,14 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        height: auto;
+
+        h4 {
+          margin-bottom: 16px;
+          display: flex;
+          flex: 0 0 auto;
+          /* Вертикальное выравнивание текста внутри заголовка */
+        }
 
         ul {
           padding: 20px;
@@ -137,25 +146,25 @@
           border-radius: 6px;
           display: flex;
           flex-direction: column;
+          gap: 12px;
           height: 100%;
-          gap: 16px;
         }
 
         li {
-          font-size: var(--text-size-13);
+          font-size: var(--text-size-16);
           line-height: var(--text-height-140);
           font-weight: var(--text-regular);
           position: relative;
           padding-left: 22px;
           span {
             position: absolute;
-            width: 5px;
-            height: 7px;
+            width: 6px;
+            height: 9px;
             display: flex;
             align-items: center;
             justify-content: center;
             left: 0;
-            top: 5.5px;
+            top: 5px;
           }
         }
       }
@@ -194,7 +203,7 @@
       }
       &-bottom {
         text-align: center;
-        font-size: var(--text-size-13);
+        font-size: var(--text-size-16);
         line-height: var(--text-height-140);
         font-weight: var(--text-regular);
       }
@@ -229,12 +238,12 @@
       top: 83px;
     }
     &-list {
-      gap: var(--gap-16);
-      margin-bottom: 60px;
+      gap: 12px;
+      margin-bottom: 40px;
     }
 
     &-item {
-      font-size: var(--text-size-12);
+      font-size: var(--text-size-14);
       line-height: var(--text-height-135);
       text-transform: uppercase;
       opacity: 70%;
@@ -248,7 +257,7 @@
       }
     }
 
-    &-link.activity {
+    &-link.active {
       border-color: var(--blue);
     }
 
@@ -348,6 +357,19 @@
 
 }
 
+@media screen and (max-width: 991px) {
+  .qp__left {
+    &-props {
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+      &-item {
+        width: 100%;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 767px) {
   .qp {
     margin-top: 80px;
@@ -400,7 +422,7 @@
         &-item {
           padding: 10px 16px;
           border-radius: 4px;
-          font-size: .9rem;
+          font-size: 1.2rem;
           &-svg {
             width: 26px;
             height: 26px;
@@ -410,15 +432,6 @@
               height: 26px;
             }
           }
-        }
-      }
-
-      &-props {
-        &:not(:last-child) {
-          margin-bottom: 40px;
-        }
-        &-item {
-          width: 100%;
         }
       }
 

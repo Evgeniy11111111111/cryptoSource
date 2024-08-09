@@ -7,6 +7,17 @@
 
   &__descr {
     max-width: 637px;
+    margin-bottom: 0;
+  }
+
+  &__icons {
+    gap:26px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .activity__icons {
+    gap: 20px;
   }
 }
 

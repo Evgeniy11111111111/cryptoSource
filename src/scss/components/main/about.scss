@@ -6,7 +6,7 @@
   }
 
   &__left {
-    max-width: 328px;
+    max-width: 386px;
     width: 100%;
   }
 
@@ -17,7 +17,7 @@
   }
 
   &__title {
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     max-width: 534px;
   }
 
@@ -31,7 +31,8 @@
   }
 
   &__descr {
-    gap: var(--gap-24);
+    gap: var(--gap-16);
+    margin-bottom: 20px;
   }
 
   &__icons {
@@ -42,8 +43,8 @@
     width: 100%;
     background: var(--green-gradient);
     gap: var(--gap-12);
-    border-radius: 4px;
-    padding: 20px;
+    border-radius: 6px;
+    padding: 26px 20px;
 
     &-svg {
       width: 50px;
@@ -61,7 +62,7 @@
   &__link {
     display: inline-block;
     color: var(--black);
-    font-size: var(--text-size-12);
+    font-size: var(--text-size-14);
     line-height: var(--text-height-135);
     text-transform: uppercase;
     font-weight: var(--text-semibold);
@@ -144,12 +145,19 @@
 
 @media screen and (max-width: 575px) {
   .main-about {
+
+    &__right {
+      &-top {
+        margin-bottom: 0;
+      }
+    }
+
     &__title {
       margin-bottom: 16px;
     }
 
     &__descr {
-      margin-bottom: var(--gap-16);
+      margin-bottom: 0;
     }
 
     &__icons {
@@ -158,6 +166,7 @@
 
     &__icon {
       width: 100%;
+      padding: 16px 20px;
     }
   }
 }

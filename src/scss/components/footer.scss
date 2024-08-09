@@ -8,7 +8,7 @@
   &__link {
     color: white;
     text-transform: uppercase;
-    font-size: var(--text-size-12);
+    font-size: var(--text-size-14);
     line-height: var(--text-height-135);
     @include hoverUnderling(var(--white));
 
@@ -69,7 +69,7 @@
     border-color: var(--white);
     color: var(--white);
     width: auto;
-    padding: 7px 30px;
+    padding: 8px 30px;
     &:hover {
       color: var(--green);
       background-color: var(--white);

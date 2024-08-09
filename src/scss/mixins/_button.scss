@@ -1,8 +1,8 @@
 @mixin btn {
   background-color: transparent;
   color: var(--black);
-  font-size: var(--text-size-12);
-  line-height: var(--text-height-135);
+  font-size: var(--text-size-14);
+  line-height: var(--text-height-100);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,7 @@
 
   span {
     text-transform: uppercase;
-    font-size: var(--text-size-12);
+    font-size: var(--text-size-14);
     line-height: var(--text-height-135);
     font-family: var(--text-sofia-condensed);
     font-weight: var(--text-bold);

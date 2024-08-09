@@ -1,7 +1,7 @@
 .text-h1 {
   font-family: var(--text-sofia-condensed);
   font-weight: 700;
-  font-size: var(--text-size-36);
+  font-size: var(--text-size-50);
   line-height: var(--text-height-100);
 }
 
@@ -14,7 +14,7 @@
 }
 
 .text-h3 {
-  font-size: var(--text-size-13);
+  font-size: var(--text-size-16);
   line-height: var(--text-height-125);
   font-family: var(--text-sofia-condensed);
   font-weight: 700;
@@ -34,15 +34,15 @@
 }
 
 .text-h5 {
-  font-size: var(--text-size-16);
+  font-size: 21px;
   line-height: var(--text-height-140);
   font-family: var(--text-sofia-condensed);
   font-weight: 600;
 }
 
 .text-h6 {
-  font-size: var(--text-size-50);
-  line-height: var(--text-height-110);
+  font-size: var(--text-size-60);
+  line-height: var(--text-height-100);
   font-family: var(--text-sofia-condensed);
   font-weight: 600;
 }
@@ -62,7 +62,7 @@
 }
 
 .text-h9 {
-  font-size: var(--text-size-16);
+  font-size: var(--text-size-18);
   line-height: var(--text-height-135);
   font-family: var(--text-sofia-condensed);
   font-weight: 600;
@@ -83,7 +83,7 @@
 }
 
 .text-h11 {
-  font-size: var(--text-size-18);
+  font-size: var(--text-size-22);
   line-height: var(--text-height-120);
   font-family: var(--text-sofia-condensed);
   font-weight: 600;
@@ -92,19 +92,19 @@
 .text-h12 {
   font-family: var(--text-sofia-condensed);
   font-weight: 700;
-  font-size: var(--text-size-28);
+  font-size: var(--text-size-36);
   line-height: var(--text-height-100);
 }
 
 
 .descr1 {
-  font-size: var(--text-size-13);
+  font-size: var(--text-size-16);
   line-height: var(--text-height-140);
   font-weight: var(--text-regular);
 }
 
 .descr2 {
-  font-size: var(--text-size-16);
+  font-size: var(--text-size-18);
   line-height: var(--text-height-145);
 }
 
@@ -140,8 +140,8 @@
 }
 
 .descr7 {
-  font-size: var(--text-size-10);
-  line-height: var(--text-height-140);
+  font-size: var(--text-size-18);
+  line-height: var(--text-height-125);
   font-family: var(--text-sofia-condensed);
   font-weight: var(--text-semibold);
 }
@@ -173,6 +173,10 @@
 }
 
 @media screen and (max-width: 767px) {
+
+  .text-h1 {
+    font-size: var(--text-size-30);
+  }
 
   .text-h2 {
     font-size: var(--text-size-28);
@@ -220,6 +224,10 @@
     line-height: var(--text-height-135);
   }
 
+  .text-h12 {
+    font-size: var(--text-size-30);
+  }
+
   .descr-1-2 {
     font-size: var(--text-size-12);
     line-height: var(--text-height-140);
@@ -232,7 +240,7 @@
   }
 
   .descr-2-1 {
-    font-size: var(--text-size-14);
+    font-size: var(--text-size-16);
     line-height: var(--text-height-145);
   }
 
@@ -245,7 +253,7 @@
   }
 
   .descr7 {
-    font-size: var(--text-size-12);
+    font-size: var(--text-size-14);
   }
 
   .text-button {
