@@ -97,6 +97,10 @@ if (document.getElementById("index")) {
       el: ".hero__right-swiper-pagination",
       clickable: true
     },
+    navigation: {
+      nextEl: ".hero__right-swiper-next",
+      prevEl: ".hero__right-swiper-prev"
+    },
   })
 
   const items = document.querySelectorAll(".after-hero__box")
@@ -152,7 +156,7 @@ if (document.getElementById("index")) {
 }
 
 if (document.getElementById("work")) {
-  const tabButtons = Array.from(document.querySelectorAll(".work__tab-head-btn"));
+  const tabButtons = Array.from(document.querySelectorAll(".pages-links-link"));
   const elements = Array.from(document.querySelectorAll(".work__tab-item"));
   const accordionItems = document.querySelectorAll('.vacancies__accordion-item-head');
   const form = document.querySelector('.internship__form-js')
@@ -303,6 +307,23 @@ if (document.getElementById("licenses")) {
   const checkbox = document.querySelectorAll(".licenses__filter-input")
   const checkedAll = document.querySelector(".licenses__filter-btn-all")
   const checkedReset = document.querySelector(".licenses__filter-btn-reset")
+  const modal = new bootstrap.Modal(document.querySelector(".js-license-modal"))
+  const items = document.querySelectorAll(".licenses__item")
+
+  items.forEach(item => {
+    item.addEventListener("click", () => {
+      modal.show()
+    })
+  })
+
+  new Swiper(".licenses__swiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".licenses__pagination",
+      clickable: true
+    }
+  })
 
   const areAllChecked = () => {
     return Array.from(checkbox).every(elem => elem.checked)
@@ -443,7 +464,7 @@ function bottomAbsolute(timelines, block, gap) {
 }
 
 function tabActive(btn, index, btns, elements) {
-  btns.forEach((el) => el.parentElement.classList.remove("active"));
+  btns.forEach((el) => el.classList.remove("active"));
   elements.forEach(el => el.classList.remove("active"));
   setTimeout(() => {
     elements.forEach(el => el.style.display = "none")
@@ -452,7 +473,7 @@ function tabActive(btn, index, btns, elements) {
 
   }, 300)
 
-  btn.parentElement.classList.add("active");
+  btn.classList.add("active");
 }
 
 function accordionActive(item) {

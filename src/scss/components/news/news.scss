@@ -89,14 +89,6 @@
   }
 }
 
-@media screen and (max-width: 1110px) {
-  .news {
-    &__list {
-      grid-template-columns: 1fr;
-    }
-  }
-}
-
 @media screen and (max-width: 992px) {
   .news {
     &__item {
@@ -113,6 +105,10 @@
     padding: 5px 0 70px;
     &__title {
       margin-bottom: var(--gap-20);
+    }
+
+    &__list {
+      grid-template-columns: 1fr;
     }
 
     &__pagination {

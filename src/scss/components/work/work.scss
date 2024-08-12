@@ -7,10 +7,15 @@
     margin-bottom: 60px;
   }
 
+  &__pages-header {
+    margin-bottom: 0;
+  }
+
+  &__pages-links {
+    margin-bottom: 0;
+  }
+
   &__tab {
-    &-head {
-      @include tabHead;
-    }
 
     &-item {
       opacity: 0;

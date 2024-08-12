@@ -23,6 +23,12 @@
     &_btn {
       display: flex;
       align-items: center;
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s ease-in-out;
+
+      &:hover {
+        border-color: var(--green);
+      }
       &-text {
         margin-right: 8px;
       }
@@ -68,7 +74,11 @@
   }
 
   &__link {
-    @include hoverLink;
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease-in-out;
+    &:hover {
+      border-color: var(--green);
+    }
   }
 
   &__content {

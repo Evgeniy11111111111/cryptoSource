@@ -163,6 +163,92 @@
       border-bottom: 1px solid var(--gray-secondary);
     }
   }
+
+  &__modal {
+    &-content {
+      border-radius: 12px;
+      border: none;
+    }
+
+    &-header {
+      border-bottom: none;
+    }
+
+    &-body {
+      padding: 0 40px 40px;
+    }
+
+    &-swiper {
+      max-width: 266px;
+      width: 100%;
+    }
+
+    &-wrap {
+      gap: 50px;
+    }
+
+    &-title {
+      font-family: var(--text-sofia-condensed);
+      font-size: 28px;
+      line-height: var(--text-height-110);
+      margin-bottom: 16px;
+    }
+
+    &-date {
+      font-size: var(--text-size-14);
+      line-height: var(--text-height-135);
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      span {
+        margin-left: 6px;
+        font-size: var(--text-size-16);
+        line-height: var(--text-height-135);
+        font-family: var(--text-sofia-condensed);
+        font-weight: 600;
+      }
+    }
+
+    &-descr {
+      font-size: var(--text-size-16);
+      line-height: var(--text-height-135);
+      margin-bottom: 24px;
+    }
+
+    &-link {
+      border: 1px solid var(--green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      font-size: var(--text-size-14);
+      line-height: var(--text-height-100);
+      padding: 8px 20px;
+      text-transform: uppercase;
+      transition: color .3s ease-in-out, background-color .3s ease-in-out;
+      span {
+        margin-left: 10px;
+        svg path{
+          transition: fill .3s ease-in-out;
+        }
+      }
+
+      &:hover {
+        background-color: var(--green);
+        color: var(--white);
+
+        span svg path {
+          fill: var(--white);
+        }
+      }
+    }
+
+  }
+
+  &__pagination {
+    padding-top: 15px;
+    margin: 0 auto;
+    @include pagination(100px, var(--green))
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -174,6 +260,16 @@
         margin-left: 0;
       }
     }
+
+    &__modal {
+      &-swiper {
+        margin: 0 auto;
+      }
+      &-link {
+        display: flex;
+      }
+    }
+
 
 
   }
