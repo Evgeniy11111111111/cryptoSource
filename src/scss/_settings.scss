@@ -3,6 +3,8 @@ html {
   scroll-behavior: smooth;
   font-size: 10px;
   font-family: var(--font-family);
+  font-feature-settings: 'locl' 2;
+  font-language-override: 'ENG';
 }
 
 *,
