@@ -81,7 +81,7 @@
     }
 
     &-more {
-      @include btnMore;
+      @include btnMore();
       &-wrap {
         display: flex;
       }
