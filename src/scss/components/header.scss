@@ -5,9 +5,14 @@
   right: 0;
   width: 100%;
   background-color: var(--white);
-  padding: 15px 0;
+  padding: 17px 0;
   z-index: 3;
   transition: box-shadow .3s ease-in-out;
+
+  &__logo {
+    width: 187px;
+    height: 58px;
+  }
 
   &__shadow {
     box-shadow: 0px 4px 30px 0px #27272712;
@@ -25,6 +30,9 @@
       align-items: center;
       border-bottom: 1px solid transparent;
       transition: border-color .3s ease-in-out;
+      font-size: 1.8rem;
+      line-height: 120%;
+      font-weight: 400;
 
       &:hover {
         border-color: var(--green);
@@ -56,11 +64,11 @@
 
       &-link {
         font-family: var(--text-sofia);
-        font-size: var(--text-size-14);
+        font-size: var(--text-size-16);
         color: var(--black);
-        line-height: var(--text-height-135);
+        line-height: var(--text-height-120);
         font-weight: 400;
-        width: 227px;
+        width: 306px;
         padding: 0;
         white-space: initial;
         transition: color .3s ease-in-out;
@@ -76,6 +84,9 @@
   &__link {
     border-bottom: 1px solid transparent;
     transition: border-color .3s ease-in-out;
+    font-size: 1.8rem;
+    line-height: 120%;
+    font-weight: 400;
     &:hover {
       border-color: var(--green);
     }
@@ -152,7 +163,8 @@
       &-link {
         transition: color .3s ease-in-out;
         font-size: var(--text-size-16);
-        line-height: var(--text-height-135);
+        font-weight: 300;
+        line-height: var(--text-height-120);
 
         &:hover {
           color: var(--green);
@@ -164,8 +176,8 @@
       margin-right: 20px;
       font-size: var(--text-size-20);
       font-family: var(--text-sofia-condensed);
-      font-weight: var(--text-semibold);
-      line-height: var(--text-height-145);
+      font-weight: 500;
+      line-height: var(--text-height-125);
     }
 
     &-svg {

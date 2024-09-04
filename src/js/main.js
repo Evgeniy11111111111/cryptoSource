@@ -127,6 +127,10 @@ if (document.getElementById("index")) {
     }
   })
 
+  const swiperContainer = document.querySelector('.customers__swiper');
+  const swiperSlides = document.querySelectorAll('.customers__slide');
+  const swiperWrapper = document.querySelector('.customers__wrapper');
+
   let swiper2 = new Swiper(".customers__swiper", {
     slidesPerView: 2,
     spaceBetween: 10,
@@ -143,16 +147,75 @@ if (document.getElementById("index")) {
         slidesPerView: 2,
         spaceBetween: 30,
       },
-      992: {
+      768: {
         slidesPerView: 3,
         spaceBetween: 30,
       },
-      1110: {
-        slidesPerView: 4,
-        spaceBetween: 30,
+
+    }
+  });
+
+
+  function toggleSwiperBasedOnWidth() {
+    const screenWidth = window.innerWidth
+    if (screenWidth > 767) {
+      // Удаляем Swiper и делаем обычную сетку
+      if (swiperContainer.classList.contains('swiper-initialized')) {
+        swiperContainer.classList.remove("swiper-initialized");
+        swiper2.destroy(true, true);
+        // Уничтожаем Swiper
+      }
+
+      swiperContainer.classList.remove('swiper');
+      swiperWrapper.classList.remove("swiper-wrapper")
+      swiperWrapper.classList.add("customers__wrapper-grid")
+      swiperSlides.forEach(slide => {
+        slide.classList.add("customers__slide-grid")
+        slide.style.width = ''; // Сбрасываем ширину слайдов
+      });
+
+    } else {
+      // Восстанавливаем Swiper
+      if (!swiperContainer.classList.contains('swiper-initialized')) {
+
+        swiperContainer.classList.add('swiper');
+        swiperWrapper.classList.add("swiper-wrapper")
+        swiperWrapper.classList.remove("customers__wrapper-grid")
+        swiperSlides.forEach(slide => {
+          slide.classList.remove("customers__slide-grid")
+          slide.style.width = ''; // Сбрасываем ширину слайдов на случай изменений
+        });
+        console.log(swiper2)
+        swiper2 = new Swiper(".customers__swiper", {
+          slidesPerView: 2,
+          spaceBetween: 10,
+          pagination: {
+            el: ".customers__pagination",
+            clickable: true
+          },
+          navigation: {
+            nextEl: ".customers__swiper-next",
+            prevEl: ".customers__swiper-prev"
+          },
+          breakpoints: {
+            567: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            992: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          }
+        });
       }
     }
-  })
+  }
+
+// Запускаем функцию при изменении размера окна и при загрузке страницы
+  window.addEventListener('resize', toggleSwiperBasedOnWidth);
+  window.addEventListener('load', toggleSwiperBasedOnWidth);
+
 }
 
 if (document.getElementById("work")) {
@@ -201,6 +264,9 @@ if (document.getElementById("qp")) {
   const myModal = new bootstrap.Modal(modal);
   const form = document.querySelector(".qp__modal-form")
   const myModalOk = new bootstrap.Modal(document.querySelector(".js-modal-ok"));
+  const items = document.querySelectorAll(".qp__swiper-slide");
+
+  const modalSwiper = new bootstrap.Modal(document.querySelector(".js-modal-swiper-qp"));
 
   btns.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -214,20 +280,37 @@ if (document.getElementById("qp")) {
     myModalOk.show();
   })
 
+  items.forEach(elem => {
+    elem.addEventListener("click", () => {
+      modalSwiper.show()
+    })
+  })
+
   if (document.querySelectorAll(".qp__swiper")) {
-    document.querySelectorAll(".qp__swiper").forEach(elem => {
-      let swiperQP = new Swiper(".qp__swiper", {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        pagination: {
-          el: ".qp__pagination",
-          clickable: true
-        },
-        navigation: {
-          nextEl: ".qp__swiper-next",
-          prevEl: ".qp__swiper-prev"
-        },
-      })
+    let swiperQP = new Swiper(".qp__swiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: ".qp__pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".qp__swiper-next",
+        prevEl: ".qp__swiper-prev"
+      },
+    })
+
+    let modalSwiper = new Swiper(".qp__modal-swiper", {
+      zoom: true,
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        prevEl: ".qp__modal-swiper-prev",
+        nextEl: ".qp__modal-swiper-next",
+      },
+      thumbs: {
+        swiper: swiperQP
+      }
     })
   }
 
@@ -297,9 +380,7 @@ if (document.getElementById("history")) {
     })
   }
 
-  if (window.innerWidth < 768) {
 
-  }
 
 }
 
@@ -308,7 +389,8 @@ if (document.getElementById("licenses")) {
   const checkedAll = document.querySelector(".licenses__filter-btn-all")
   const checkedReset = document.querySelector(".licenses__filter-btn-reset")
   const modal = new bootstrap.Modal(document.querySelector(".js-license-modal"))
-  const items = document.querySelectorAll(".licenses__item")
+  const items = document.querySelectorAll(".licenses__item-increase")
+  const itemsOpen = document.querySelectorAll(".licenses__open")
 
   items.forEach(item => {
     item.addEventListener("click", () => {
@@ -316,14 +398,11 @@ if (document.getElementById("licenses")) {
     })
   })
 
-  new Swiper(".licenses__swiper", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    pagination: {
-      el: ".licenses__pagination",
-      clickable: true
-    }
-  })
+  itemsOpen.forEach(item => (
+    item.addEventListener("click", () => {
+      modal.show()
+    })
+  ))
 
   const areAllChecked = () => {
     return Array.from(checkbox).every(elem => elem.checked)

@@ -232,21 +232,18 @@ p {
 }
 
 .pages-header {
-  margin-bottom: var(--gap-40);
+  margin-bottom: 50px;
 }
 
 .pages-links {
-  margin-bottom: 50px;
-
   &-list {
-    gap: 20px;
-    column-gap: 24px;
+    column-gap: 30px;
     row-gap: 20px;
   }
 
   &-link {
-    font-size: var(--text-size-16);
-    line-height: var(--text-height-120);
+    font-size: var(--text-size-18);
+    line-height: var(--text-height-135);
     text-transform: uppercase;
     opacity: 70%;
     @include hoverUnderling(var(--green))
@@ -257,16 +254,35 @@ p {
   }
 }
 
+.pages-title {
+  font-size: 4.4rem;
+  line-height: 110%;
+  font-family: "Sofia Sans Condensed";
+  font-weight: 700;
+  padding-top: 60px;
+}
+
 @media screen and (max-width: 767px) {
   .pages-header {
-    margin-bottom: 32px;
+    margin-bottom: 40px;
   }
 
   .pages-links {
-    margin-bottom: 16px;
     &-list {
-      column-gap: 20px;
+      column-gap: 24px;
       row-gap: 17px;
     }
+
+    &-link {
+      font-size: 1.6rem;
+    }
+  }
+
+  .pages-title {
+    padding-top: 40px;
+    font-size: 2.8rem;
+    line-height: 120%;
+    font-family: "Sofia Sans Condensed";
+    font-weight: 700;
   }
 }

@@ -10,7 +10,8 @@
 
   &-item {
     font-size: var(--text-size-16);
-    line-height: var(--text-height-145);
+    line-height: var(--text-height-120);
+    font-weight: 300;
     color: var(--green);
     position: relative;
     &:not(:last-child) {
@@ -19,7 +20,7 @@
       &:before {
         content: "/";
         font-size: var(--text-size-16);
-        line-height: var(--text-height-145);
+        line-height: var(--text-height-120);
         color: var(--black);
         position: absolute;
         right: 0;
@@ -28,6 +29,10 @@
   }
   &-link {
     color: var(--black);
+  }
+
+  &-blue {
+    color: var(--blue);
   }
 }
 

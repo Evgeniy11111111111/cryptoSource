@@ -1,9 +1,14 @@
 .main-news {
-  padding: 55px 0;
+  padding: 80px 0;
 
   &__top {
-    margin-bottom: 36px;
-    gap: 54px;
+    margin-bottom: 40px;
+    gap: 70px;
+  }
+
+  &__title {
+    font-size: 4.4rem;
+    line-height: 110%;
   }
 
   &__bottom {
@@ -14,8 +19,8 @@
 
   &__link {
     @include btn;
-    padding: 6px 10px;
-    max-width: 160px;
+    padding: 9px 20px;
+    max-width: 173px;
     width: 100%;
   }
 
@@ -23,8 +28,10 @@
     border: none;
     &-wrap {
       gap: var(--gap-30);
+      align-items: center;
     }
     &-img {
+      height: 100%;
       border-radius: 4px;
       width: calc((100% - 30px) / 2);
       img {
@@ -37,32 +44,40 @@
     }
 
     &-date {
-      font-size: var(--text-size-14);
-      line-height: var(--text-height-135);
+      font-size: var(--text-size-16);
+      line-height: var(--text-height-120);
+      font-weight: 300;
       margin-bottom: 16px;
       color: var(--black-transporent-50);
     }
 
     &-title {
       color: var(--black);
-      margin-bottom: 8px;
+      margin-bottom: 20px;
       text-transform: uppercase;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      font-size: 2rem;
+      line-height: 130%;
+      font-weight: 500;
     }
 
     &-text {
       font-size: var(--text-size-16);
-      line-height: var(--text-height-145);
+      line-height: var(--text-height-120);
       color: var(--black);
       opacity: 70%;
+      font-weight: 300;
       overflow: hidden;
-      margin-bottom: 10px;
       display: -webkit-box;
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
+    }
+
+    &-top {
+      margin-bottom: 30px;
     }
 
     &-more {
@@ -87,7 +102,16 @@
 
 @media screen and (max-width: 767px) {
   .main-news {
-    padding: 30px 0;
+    padding: 45px 0 35px;
+
+    &__title {
+      font-size: 2.8rem;
+    }
+
+    &__link {
+      padding: 5.5px 16px;
+      max-width: 164px;
+    }
 
     &__top {
       margin-bottom: var(--gap-20);
@@ -103,25 +127,35 @@
     }
 
     &__item {
+
+      &-wrap {
+        gap: 12px;
+        align-items: start;
+      }
+
+      &-img {
+        width: calc(44% - 12px / 2);
+      }
+
+      &-right {
+        height: 100%;
+        width: calc(56% - 12px / 2);
+      }
+
       &-date {
-        font-size: var(--text-size-12);
+        font-size: var(--text-size-14);
         margin-bottom: var(--gap-12);
       }
 
       &-title {
-        margin-bottom: 4px;
+        margin-bottom: 8px;
+        font-size: 1.6rem;
       }
 
       &-text {
-        font-size: 11px;
-        margin-bottom: 21px;
+        font-size: 14px;
       }
 
-      &-more {
-        span {
-          font-size: var(--text-size-10);
-        }
-      }
     }
   }
 }

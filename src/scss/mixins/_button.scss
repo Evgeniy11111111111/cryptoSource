@@ -1,12 +1,14 @@
 @mixin btn {
   background-color: transparent;
   color: var(--black);
-  font-size: var(--text-size-14);
-  line-height: var(--text-height-100);
+  font-size: var(--text-size-16);
+  font-family: "Sofia Sans Semi Condensed";
+  line-height: var(--text-height-120);
+  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 9px 10px 8px;
+  padding: 9px 10px 9px;
   text-transform: uppercase;
   transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
   border-radius: 4px;
@@ -23,9 +25,9 @@
 
   span {
     text-transform: uppercase;
-    font-size: var(--text-size-14);
-    line-height: var(--text-height-135);
-    font-family: var(--text-sofia-condensed);
+    font-size: var(--text-size-16);
+    line-height: var(--text-height-120);
+    font-family: "Sofia Sans Semi Condensed";
     font-weight: var(--text-bold);
     border-bottom: 1px solid var(--green);
     transition: color .3s ease-in-out, border-color .3s ease-in-out;
