@@ -110,20 +110,16 @@
 
     &__link {
       padding: 5.5px 16px;
-      max-width: 164px;
     }
 
     &__top {
       margin-bottom: var(--gap-20);
       justify-content: space-between;
+      gap: 10px;
     }
 
     &__bottom {
       grid-template-columns: 1fr;
-    }
-
-    &__content {
-      padding-bottom: 78px;
     }
 
     &__item {

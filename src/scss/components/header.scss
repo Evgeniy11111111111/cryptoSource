@@ -12,6 +12,12 @@
   &__logo {
     width: 187px;
     height: 58px;
+    margin-right: 20px;
+  }
+
+  &__right {
+    max-width: 628px;
+    width: 100%;
   }
 
   &__shadow {
@@ -19,8 +25,10 @@
   }
 
   &__nav {
+    width: 100%;
     &-list {
-      gap: var(--gap-40);
+      justify-content: space-between;
+      width: 100%;
     }
   }
 

@@ -385,9 +385,6 @@ if (document.getElementById("history")) {
 }
 
 if (document.getElementById("licenses")) {
-  const checkbox = document.querySelectorAll(".licenses__filter-input")
-  const checkedAll = document.querySelector(".licenses__filter-btn-all")
-  const checkedReset = document.querySelector(".licenses__filter-btn-reset")
   const modal = new bootstrap.Modal(document.querySelector(".js-license-modal"))
   const items = document.querySelectorAll(".licenses__item-increase")
   const itemsOpen = document.querySelectorAll(".licenses__open")
@@ -404,32 +401,6 @@ if (document.getElementById("licenses")) {
     })
   ))
 
-  const areAllChecked = () => {
-    return Array.from(checkbox).every(elem => elem.checked)
-  }
-
-  const areCheckedOne = () => {
-    return Array.from(checkbox).some(elem => elem.checked)
-  }
-
-  checkedAll.addEventListener("click", () => {
-    checkbox.forEach(elem => elem.checked = true)
-    checkedReset.disabled = false
-    checkedAll.disabled = true
-  })
-
-  checkedReset.addEventListener("click", () => {
-    checkbox.forEach(elem => elem.checked = false)
-    checkedReset.disabled = true
-    checkedAll.disabled = false
-  })
-
-  checkbox.forEach(elem => {
-    elem.addEventListener("change", () => {
-      checkedAll.disabled = areAllChecked()
-      checkedReset.disabled = !areCheckedOne()
-    })
-  })
 }
 
 if (document.getElementById("contacts")) {

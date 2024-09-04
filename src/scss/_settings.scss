@@ -246,6 +246,7 @@ p {
   &-link {
     font-size: var(--text-size-18);
     line-height: var(--text-height-135);
+    font-family: "Sofia Sans Semi Condensed";
     text-transform: uppercase;
     opacity: 70%;
     @include hoverUnderling(var(--green))

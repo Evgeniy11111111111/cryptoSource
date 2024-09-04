@@ -38,15 +38,15 @@
 
 @mixin breadcrumbMobile {
   &-item {
-    font-size: var(--text-size-12);
-    line-height: var(--text-height-140);
+    font-size: var(--text-size-14);
+    line-height: var(--text-height-120);
     &:not(:last-child) {
       padding-right: 9px;
       margin-right: 4px;
 
       &::before {
-        font-size: var(--text-size-12);
-        line-height: var(--text-height-140);
+        font-size: var(--text-size-14);
+        line-height: var(--text-height-120);
       }
     }
   }
