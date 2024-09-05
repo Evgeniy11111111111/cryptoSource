@@ -98,6 +98,8 @@
     }
 
     &-descr {
+      max-width: 785px;
+      width: 100%;
       &:not(:last-child) {
         margin-bottom: 120px;
       }
@@ -222,7 +224,7 @@
         text-align: center;
         font-size: var(--text-size-16);
         line-height: var(--text-height-140);
-        font-weight: var(--text-regular);
+        font-weight: 300;
       }
     }
 
@@ -522,6 +524,7 @@
       }
 
       &-descr {
+        max-width: none;
         &:not(:last-child) {
           margin-bottom: 70px;
         }

@@ -168,6 +168,7 @@
   &__descr {
     width: 100%;
     font-size: 21px;
+    font-weight: 300;
     line-height: 120%;
     color: var(--white);
 
@@ -211,6 +212,10 @@
 @media screen and (max-width: 1572px) {
   .hero__left-container {
     margin-left: 0;
+  }
+
+  .hero__content {
+    min-height: 600px;
   }
 
   .hero__left-swiper-navigation {
